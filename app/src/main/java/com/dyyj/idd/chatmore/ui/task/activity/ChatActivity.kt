@@ -93,6 +93,8 @@ import java.util.concurrent.TimeUnit
  */
 class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(), TextWatcher, EMMessageListener, AcceptListener, RejectListener, View.OnClickListener {
 
+    var age: Int = 19
+
     var mForContent: Fragment? = null
 
     private var mPopWindow: CustomPopWindow? = null
@@ -197,6 +199,7 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(), TextWat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         onCreateEvenbus(this)
+        mViewModel.netUserinfo2(getToUserid())//获取对方个人信息
         initListener()
         initToobar()
         initData()
@@ -1137,8 +1140,7 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(), TextWat
      */
     @Subscribe
     fun showUserInfoDetail2(obj: ChatViewModel.UserInfoDetailVM2) {
-        mViewModel.getAdapter().getList().add(0, BaseChatAdapterV2.Wrapper(MessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.obj?.userBaseInfo?.age, isFriend)))
-        mViewModel.getAdapter().notifyDataSetChanged()
+        age = obj.obj?.userBaseInfo?.age!!
     }
 
     private fun initRecycleView(list: List<EMMessage>) = when(fromType) {
@@ -1172,24 +1174,36 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(), TextWat
             //设置线
             mViewModel.getAdapter().setLayoutManager(layoutManager)
             mViewModel.getAdapter().initChatList(list)
-            //获取对方个人信息
-            mViewModel.netUserinfo2(getToUserid())
-            //mViewModel.getAdapter().getList().add(0, BaseChatAdapterV2.Wrapper(MessageHeadEntity(fromType, getToAvatar(), getToNickName(), isFriend)))
-            mViewModel.getAdapter().setListener(this)
-            mBinding.recyclerview.addOnScrollListener(mViewModel.getAdapter().mScrollListener)
-            mBinding.recyclerview.layoutManager = layoutManager
-            mBinding.recyclerview.adapter = mViewModel.getAdapter()
-            /*mBinding.recyclerview.setOnClickListener {
-                if (mBinding.chatMoreEmotion.visibility == View.VISIBLE) {
-                    mBinding.chatEmotionOpenIv.setImageResource(R.drawable.ic_chat_emotion_open)
-                    mBinding.chatMoreEmotion.visibility = View.GONE
+            when (age) {
+                19 -> {
+                    Handler().postDelayed({
+                        setAdapter()
+                    },1000)
                 }
-                if (mBinding.chatMoreLl.visibility == View.VISIBLE) {
-                    mBinding.chatMoreLl.visibility = View.GONE
+                else -> {
+                    setAdapter()
                 }
-            }*/
-            mViewModel.getAdapter().scrollToBotton()
+            }
         }
+    }
+
+    fun setAdapter() {
+        val layoutManager = LinearLayoutManager(this)
+        mViewModel.getAdapter().getList().add(0, BaseChatAdapterV2.Wrapper(MessageHeadEntity(fromType, getToAvatar(), getToNickName(), age, isFriend)))
+        mViewModel.getAdapter().setListener(this)
+        mBinding.recyclerview.addOnScrollListener(mViewModel.getAdapter().mScrollListener)
+        mBinding.recyclerview.layoutManager = layoutManager
+        mBinding.recyclerview.adapter = mViewModel.getAdapter()
+        /*mBinding.recyclerview.setOnClickListener {
+            if (mBinding.chatMoreEmotion.visibility == View.VISIBLE) {
+                mBinding.chatEmotionOpenIv.setImageResource(R.drawable.ic_chat_emotion_open)
+                mBinding.chatMoreEmotion.visibility = View.GONE
+            }
+            if (mBinding.chatMoreLl.visibility == View.VISIBLE) {
+                mBinding.chatMoreLl.visibility = View.GONE
+            }
+        }*/
+        mViewModel.getAdapter().scrollToBotton()
     }
 
     //初始化聊天表情
@@ -2192,15 +2206,25 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(), TextWat
     @Subscribe
     fun onUpdateMessageVM(obj: ChatViewModel.UpdateMessageVM) {
         //判断当前SquareMessageHeadEntity是否存在，决定是否刷新／显示
+        //获取对方个人信息
+        mViewModel.netUserinfo3(getToUserid(),obj.isTasking)
+    }
+
+
+    /**
+     * 获取对方个人信息，再添加卡片
+     */
+    @Subscribe
+    fun showUserInfoDetail3(obj: ChatViewModel.UserInfoDetailVM3) {
         if(mViewModel.getAdapter().getList().size == 0) {
             mViewModel.getAdapter().getList().add(0,
-                    BaseChatAdapterV2.Wrapper(SquareMessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.isTasking)))
+                    BaseChatAdapterV2.Wrapper(SquareMessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.isTasking, obj.obj?.userBaseInfo?.age)))
         } else if(mViewModel.getAdapter().getList()[0].item is SquareMessageHeadEntity) {
             mViewModel.getAdapter().getList().set(0,
-                    BaseChatAdapterV2.Wrapper(SquareMessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.isTasking)))
+                    BaseChatAdapterV2.Wrapper(SquareMessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.isTasking, obj.obj?.userBaseInfo?.age)))
         } else {
             mViewModel.getAdapter().getList().add(0,
-                    BaseChatAdapterV2.Wrapper(SquareMessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.isTasking)))
+                    BaseChatAdapterV2.Wrapper(SquareMessageHeadEntity(fromType, getToAvatar(), getToNickName(), obj.isTasking, obj.obj?.userBaseInfo?.age)))
         }
         mViewModel.getAdapter().notifyDataSetChanged()
         Timber.tag("niushiqi-task").i("onUpdateMessageVM " + System.currentTimeMillis())

@@ -19,7 +19,6 @@ import com.dyyj.idd.chatmore.databinding.ItemPlazaFlowCardBinding
 import com.dyyj.idd.chatmore.eventtracking.EventBeans
 import com.dyyj.idd.chatmore.model.network.result.PlazaCardResult
 import com.dyyj.idd.chatmore.model.network.result.PlazaTopicListResult
-import com.dyyj.idd.chatmore.model.preferences.PreferenceUtil
 import com.dyyj.idd.chatmore.ui.plaza.activity.PlazaPostedActivity
 import com.dyyj.idd.chatmore.ui.plaza.activity.PlazaSpaceActivity
 import com.dyyj.idd.chatmore.ui.plaza.activity.PlazaTopicActivity
@@ -89,7 +88,7 @@ class PlazaFlowCardAdapter : LoadMoreAdapter<Any>() {
 
             mBinding.tvTopic.text = "#${obj.squareTopicTitle}#"//话题 名称
 
-            mBinding.tvTopicNum.text = "${obj.squareTopicCommentsNum}"//参与人数
+            mBinding.tvTopicNum.text = "参与${obj.squareTopicCommentsNum}人"//参与人数
         }
 
         fun onTopic(view: View, obj: PlazaTopicListResult.Topic) {
@@ -158,9 +157,9 @@ class PlazaFlowCardAdapter : LoadMoreAdapter<Any>() {
 
             mBinding.tvTip.visibility = View.GONE
             mBinding.tvTip2.visibility = View.GONE
-            if (position == 0 && !PreferenceUtil.getBoolean(KEY_GUDIE, false)) {
+            /*if (position == 0 && !PreferenceUtil.getBoolean(KEY_GUDIE, false)) {
                 guide(mBinding.tvTip)
-            }
+            }*/
         }
 
         fun onLike(view: View, obj: PlazaCardResult.PlazaTopic) {
@@ -174,7 +173,7 @@ class PlazaFlowCardAdapter : LoadMoreAdapter<Any>() {
         }
 
         fun onComments(view: View, obj: PlazaCardResult.PlazaTopic) {
-            CommentsActivity.launch(view.context, obj.squareTopicCommentId,obj.squareTopicId)
+            CommentsActivity.launch(view.context, obj.squareTopicCommentId,obj.dynamicId)
             EventTrackingUtils.joinPoint(EventBeans("ck_publicsquare_coment", obj.userId ?: ""))
         }
 

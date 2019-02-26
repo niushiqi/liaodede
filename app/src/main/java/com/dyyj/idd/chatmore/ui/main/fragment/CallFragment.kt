@@ -257,7 +257,7 @@ class CallFragment : BaseFragment<FragmentCallBinding, CallViewModel>(), MyFrame
         }
 
         mBinding.txtMessageTop.setOnClickListener {
-            (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance())
+            (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance(),true)
         }
     }
 

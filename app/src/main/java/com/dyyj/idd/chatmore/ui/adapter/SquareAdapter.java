@@ -204,9 +204,8 @@ public class SquareAdapter extends BaseAdapter {
         holder.iv_head.setOnClickListener(v -> mHeadListener.onClick(mDatas.get(position).getUserId()));
         //话题点击
         holder.rl_topic.setOnClickListener(v -> {
-            CommentsActivity.launch(mContext, message.getSquareCommentId() + "",message.getUserId());
+            CommentsActivity.launch(mContext, message.getSquareCommentId() + "",message.getSquareCommentId());
         });
-
         return convertView;
     }
 

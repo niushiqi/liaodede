@@ -90,7 +90,7 @@ public class CommentsActivity extends FragmentActivity implements View.OnClickLi
     private TextView tv_content;
     private TextView tv_time;
     private ImageView iv_menu;
-    TextView tv_topic_title;
+    TextView tv_topic_num;
     TextView tv_topic_content;
     private View headView;
 
@@ -193,13 +193,13 @@ public class CommentsActivity extends FragmentActivity implements View.OnClickLi
                         tv_time.setText(DateFormatter.timeToDate(detailData.getCommentTimestamp()));
                         ImageLoader.loadHead(iv_head, detailData.getAvatar());
                         tv_name.setText(detailData.getNickname());
-//                        tv_topic_title.setText(detailData.getSquareTopicTitle());
-                        tv_topic_content.setText(detailData.getSquareTopicTitle());
+                        tv_topic_num.setText("参与"+detailData.getCommentAgreeNum()+"人");//参与人数            mBinding.tv.text = "参与 ${obj.squareTopicAgreeNum + obj?.squareTopicCommentsNum}人"
+                        tv_topic_content.setText("#"+detailData.getSquareTopicTitle()+"#");
                         tv_level.setText(detailData.getUserLevel());
                         if (TextUtils.equals("2", detailData.getGender())) {
-                            tv_sex_age.setText(String.valueOf("女 / " + detailData.getBirthday()));
+                            tv_sex_age.setText(String.valueOf("女  " + detailData.getBirthday()));
                         } else {
-                            tv_sex_age.setText(String.valueOf("男 / " + detailData.getBirthday()));
+                            tv_sex_age.setText(String.valueOf("男  " + detailData.getBirthday()));
                         }
                         String userid = ChatApp.Companion.getInstance().getDataRepository().getUserid();
                         //自己的贴子
@@ -273,7 +273,7 @@ public class CommentsActivity extends FragmentActivity implements View.OnClickLi
         tv_time = headView.findViewById(R.id.tv_comments_time);
         iv_menu = headView.findViewById(R.id.img_menu);
         gv_pic = headView.findViewById(R.id.gv_comment_pic);
-        tv_topic_title = headView.findViewById(R.id.tv_comment_topic_title);
+        tv_topic_num = headView.findViewById(R.id.tv_comment_topic_num);
         tv_topic_content = headView.findViewById(R.id.tv_comment_topic_content);
         ll_praise = headView.findViewById(R.id.ll_comment_praise);
         gv_praise = headView.findViewById(R.id.gv_comment_priase);
@@ -478,7 +478,7 @@ public class CommentsActivity extends FragmentActivity implements View.OnClickLi
                         mDatas.get(position).setReplyAgreeNum(String.valueOf(agreeNum));
                         commentsAdapter.notifyDataSetChanged();
                     } else {
-                        Toast.makeText(getApplicationContext(), result.getErrorMsg(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), result.getErrorMsg(), Toast.LENGTH_SHORT).show();//不能重复点赞，因为没有设置是否用户已经点过的值
                     }
                 }, new Consumer<Throwable>() {
                     @Override

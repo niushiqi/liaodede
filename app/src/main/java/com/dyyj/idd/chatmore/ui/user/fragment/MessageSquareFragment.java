@@ -70,7 +70,7 @@ public class MessageSquareFragment extends Fragment {
         refreshLayout.setOnRefreshListener(() -> getData());
 
         lv_square.setOnItemClickListener((parent, view, position, id) -> {
-            CommentsActivity.launch(getActivity(), mData.get(position).getSquareCommentId() + "",null);
+            CommentsActivity.launch(getActivity(), mData.get(position).getSquareCommentId() + "",mData.get(position).getSquareCommentId());
         });
         mAdapter.setReplyClick(new SquareAdapter.OnReplyClickListener() {
             @Override

@@ -332,7 +332,7 @@ class CallOutgoingFragment : BaseFragment<FragmentCallOutgoingBinding, CallOutgo
                     val obj = msg.obj as StartMatchingResult
                     var subscribe = Observable.timer(5, TimeUnit.SECONDS).subscribe({
                         MainActivity.startOpenCall(mActivity)
-                        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance())
+                        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance(),false)
                         val b = Bundle()
                         b.putString("friendshipLevel", obj.data!!.matchingUserLevel.toString())
                         b.putInt("fromType", 2)

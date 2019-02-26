@@ -101,6 +101,21 @@
         </android.support.v4.widget.SwipeRefreshLayout>
 
         <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:background="@drawable/bg_plaza_guide"
+            android:layout_gravity="right|bottom"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingRight="20dp"
+            android:layout_marginBottom="70dp"
+            android:text="首次发帖，拿20金币"
+            android:textColor="#ff975d04"
+            android:textSize="11sp"
+            />
+
+        <TextView
             android:id="@+id/tv_post_topic"
             android:layout_width="60dp"
             android:layout_height="60dp"

@@ -64,8 +64,10 @@
 
     <color name="color_comment_name_enable">#5985B2</color>
     <color name="color_comment_name_normal">#3E3E3E</color>
-    <color name="color_comment_nice_add">#FE9C33</color>
-    <color name="color_comment_nice_cancle">#BFBFBF</color>
+    <color name="color_comment_nice_add">#7F8D9C</color>
+    <color name="color_comment_nice_cancle">#F5C033</color>
+
+    <color name="color_prainse_select">#FF715F</color>
 
     <color name="color_top_up">#B78448</color>
     <color name="color_gift_name_text">#6A6A6B</color>

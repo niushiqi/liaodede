@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -88,6 +89,10 @@ public class CommentsAdapter extends BaseQuickAdapter<UserSquareCommentReplyResu
 
     @Override
     protected void convert(BaseViewHolder helper, UserSquareCommentReplyResult.UserReply item) {
+        LinearLayout llPraise = helper.getView(R.id.ll_praise);//点赞
+        LinearLayout llReplay = helper.getView(R.id.ll_replay);//回复
+        LinearLayout llGodComment = helper.getView(R.id.ll_god_comment);//选择神评论
+        ImageView ivGod = helper.getView(R.id.iv_god);//选择神评论
         TextView tv_tag = helper.getView(R.id.tv_item_comments_tag);
         ImageView iv_head = helper.getView(R.id.iv_item_comments_head);
         TextView tv_time = helper.getView(R.id.tv_item_comment_time);
@@ -101,37 +106,37 @@ public class CommentsAdapter extends BaseQuickAdapter<UserSquareCommentReplyResu
         TextView tv_praise = helper.getView(R.id.tv_item_comments_praise_num);
 
         if (mIsSelf) {
-            tv_nice.setVisibility(View.VISIBLE);
+            llGodComment.setVisibility(View.VISIBLE);
         } else {
-            tv_nice.setVisibility(View.INVISIBLE);
+            llGodComment.setVisibility(View.INVISIBLE);
         }
         ImageLoader.loadHead(iv_head, item.getAvatar());
         tv_name.setText(item.getReplyUserNickname());
-        tv_praise.setText(item.getReplyAgreeNum());
+        tv_praise.setText("+"+item.getReplyAgreeNum());
         tv_time.setText(DateFormatter.timeToDate(item.getReplyTimestamp()));
         //回复状态
         if (!TextUtils.isEmpty(item.getReplyToUserNickname())) {
-            tv_tag.setVisibility(View.INVISIBLE);
             String content = mContext.getResources().getString(R.string.comments_content);
             content = String.format(content, item.getReplyToUserNickname(), item.getReplyContent());
             tv_comment.setText(Html.fromHtml(content));
         } else {
-            tv_tag.setVisibility(View.VISIBLE);
             tv_comment.setText(item.getReplyContent());
         }
-        //置为神评论的状态
-        if (TextUtils.equals("0", item.getReplyNb())) {
-            tv_nice.setBackgroundResource(R.drawable.bg_comment_nice_add);
+
+        if (TextUtils.equals("0", item.getReplyNb())) {//0 != 神评论
+            tv_tag.setVisibility(View.GONE);//隐藏神评论
+            //tv_nice.setBackgroundResource(R.drawable.bg_comment_nice_add);
+            ivGod.setImageResource(R.drawable.ic_god_comment);
             tv_nice.setTextColor(mContext.getResources().getColor(R.color.color_comment_nice_add));
             tv_nice.setText(mContext.getResources().getString(R.string.comments_nice_add));
-            tv_tag.setBackgroundResource(R.drawable.bg_comment_floor);
-            tv_tag.setText(item.getFloor() + "楼");
+            //tv_tag.setBackgroundResource(R.drawable.bg_comment_floor);
+            //tv_tag.setText(item.getFloor() + "楼");//不做楼层
         } else {
-            tv_nice.setBackgroundResource(R.drawable.bg_comment_nice_cancle);
+            tv_tag.setVisibility(View.VISIBLE);//显示神评论
+            //tv_nice.setBackgroundResource(R.drawable.bg_comment_nice_cancle);
+            ivGod.setImageResource(R.drawable.ic_god_comment_select);
             tv_nice.setTextColor(mContext.getResources().getColor(R.color.color_comment_nice_cancle));
             tv_nice.setText(mContext.getResources().getString(R.string.comments_nice_cancle));
-            tv_tag.setBackgroundResource(R.drawable.bg_comments_nice);
-            tv_tag.setText("神评论");
         }
         List<String> images = item.getReplyImage();
         if (images.size() > 0) {
@@ -163,6 +168,8 @@ public class CommentsAdapter extends BaseQuickAdapter<UserSquareCommentReplyResu
         iv_praise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                iv_praise.setImageResource(R.drawable.ic_dynamic_like_ok);
+                tv_praise.setTextColor(mContext.getResources().getColor(R.color.color_prainse_select));
                 mPraiseListener.onClick(helper.getAdapterPosition() - 1);
             }
         });
@@ -178,6 +185,20 @@ public class CommentsAdapter extends BaseQuickAdapter<UserSquareCommentReplyResu
                 //mChatListener.onClick(helper.getAdapterPosition() - 1);
                 mChatListener.onClick(item.getReplyUserId());
                 EventTrackingUtils.joinPoint(new EventBeans("ck_publicsquare_privatechat2", item.getReplyUserId()));
+            }
+        });
+        llReplay.setOnClickListener(new View.OnClickListener() {//调起键盘
+            @Override
+            public void onClick(View v) {
+                mReplyListener.onClick(helper.getAdapterPosition() - 1);
+            }
+        });
+        llPraise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_praise.setImageResource(R.drawable.ic_dynamic_like_ok);
+                tv_praise.setTextColor(mContext.getResources().getColor(R.color.color_prainse_select));
+                mPraiseListener.onClick(helper.getAdapterPosition() - 1);
             }
         });
     }

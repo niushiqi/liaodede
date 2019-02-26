@@ -13,6 +13,7 @@ import android.graphics.RectF
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.provider.Settings
 import android.support.v4.app.NotificationManagerCompat
 import android.support.v4.content.ContextCompat
@@ -455,7 +456,8 @@ class OpenCallFragment : BaseFragment<FragmentOpenCallBinding, OpenCallViewModel
                 mActivity.niceToast("当前无可用网络")
                 return@setOnClickListener
             }
-            (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance())
+
+            (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance(),true)
             EventTrackingUtils.joinPoint(EventBeans("ck_home_messagepage",""))
         }
 
@@ -470,7 +472,8 @@ class OpenCallFragment : BaseFragment<FragmentOpenCallBinding, OpenCallViewModel
                 event.action == MotionEvent.ACTION_MOVE -> {
                     Log.e("pop", (yM - downY).toString())
                     if ((yM - downY > 0) and (Math.abs(yM - downY).toInt() > scrollY.toInt())) {
-                        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance())
+                        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance(),true)
+
                     }
                 }
                 event.action == MotionEvent.ACTION_UP -> {
@@ -1371,12 +1374,13 @@ class OpenCallFragment : BaseFragment<FragmentOpenCallBinding, OpenCallViewModel
 
     @Subscribe
     fun goChat(obj: TaskChatEvent) {
-        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance())
+        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance(),false)
+
     }
 
     @Subscribe
     fun goChat(obj: TaskChat2Event) {
-        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance())
+        (mActivity as MainActivity).addFragment2(SystemMessageFragment.instance(),false)
         //EventBus.getDefault().post(TaskStartSquareEvent())
     }
 

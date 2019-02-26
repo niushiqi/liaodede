@@ -517,6 +517,19 @@ class ChatViewModel : ViewModel() {
     mCompositeDisposable.add(subscribe)
   }
 
+  /**
+   * 获取个人信息
+   */
+  fun netUserinfo3(userId: String,isTasking: Boolean) {
+    val subscribe = mDataRepository.getUserDetailInfo(userId).subscribe({
+                                                                          EventBus.getDefault().post(UserInfoDetailVM3(it.data,isTasking))
+                                                                        }, {
+                                                                          niceToast(it.message)
+                                                                        })
+    mCompositeDisposable.add(subscribe)
+  }
+
+
 
 
   /**
@@ -723,6 +736,8 @@ class ChatViewModel : ViewModel() {
   class UserInfoDetailVM(val success: Boolean)
 
   class UserInfoDetailVM2(val obj: UserDetailInfoResult.Data? = null)
+
+  class UserInfoDetailVM3(val obj: UserDetailInfoResult.Data? = null,val isTasking: Boolean = false)
 
   class AvatarVM(val avatar: Boolean, val obj: ImageMessage? = null, val errorMsg: String? = "")
 

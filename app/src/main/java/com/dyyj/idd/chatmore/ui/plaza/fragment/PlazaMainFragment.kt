@@ -1,5 +1,8 @@
 package com.dyyj.idd.chatmore.ui.plaza.fragment
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -12,6 +15,8 @@ import com.dyyj.idd.chatmore.R
 import com.dyyj.idd.chatmore.base.BaseFragment
 import com.dyyj.idd.chatmore.databinding.FragmentPlazaMainBinding
 import com.dyyj.idd.chatmore.eventtracking.EventBeans
+import com.dyyj.idd.chatmore.model.preferences.PreferenceUtil
+import com.dyyj.idd.chatmore.ui.adapter.PlazaFlowCardAdapter
 import com.dyyj.idd.chatmore.ui.main.activity.MainActivity
 import com.dyyj.idd.chatmore.ui.plaza.activity.PlazaPostedActivity
 import com.dyyj.idd.chatmore.ui.plaza.activity.PlazaTopicActivity
@@ -20,6 +25,7 @@ import com.dyyj.idd.chatmore.ui.task.activity.TaskSystemActivity
 import com.dyyj.idd.chatmore.ui.user.activity.MyMsgActivity
 import com.dyyj.idd.chatmore.ui.user.fragment.MessageSquareFragment
 import com.dyyj.idd.chatmore.ui.wallet.actiivty.InviteNewActivity
+import com.dyyj.idd.chatmore.utils.DisplayUtils
 import com.dyyj.idd.chatmore.utils.EventTrackingUtils
 import com.dyyj.idd.chatmore.viewmodel.PlazaMainViewModel
 import com.dyyj.idd.chatmore.viewmodel.PlazaPostedViewModel
@@ -100,6 +106,11 @@ class PlazaMainFragment : BaseFragment<FragmentPlazaMainBinding, PlazaMainViewMo
 
     override fun onResume() {
         super.onResume()
+
+        if (!PreferenceUtil.getBoolean(PlazaFlowCardAdapter.KEY_GUDIE, false)) {
+            guide(mBinding.tvTip)
+        }
+
         //开始广场时进行弹窗判断
         //mViewModel.squarePopHandle(MainActivity.isSquarePop, MainActivity.squarePopNumber,
         //        MainActivity.squarePopImage, MainActivity.squarePopGotoTarget)
@@ -146,6 +157,24 @@ class PlazaMainFragment : BaseFragment<FragmentPlazaMainBinding, PlazaMainViewMo
                 }
             }
         }
+    }
+
+    /**
+     * 显示引导
+     */
+    private fun guide(view: View) {
+        view.visibility = View.VISIBLE
+
+        //动画
+        val toFloat = DisplayUtils.dp2px(mBinding.root.context, 10f).toFloat()
+        var objectAnimator = ObjectAnimator.ofFloat(view, "translationY", toFloat)
+        objectAnimator.setDuration(1000);
+        objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        objectAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            objectAnimator.setAutoCancel(true)
+        }
+        objectAnimator.start()
     }
 
     /**

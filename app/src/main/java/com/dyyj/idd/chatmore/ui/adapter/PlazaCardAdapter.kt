@@ -130,7 +130,7 @@ class PlazaCardAdapter : LoadMoreAdapter<PlazaCardResult.PlazaTopic>() {
         }
 
         fun onComments(view: View, obj: PlazaCardResult.PlazaTopic) {
-            CommentsActivity.launch(view.context, obj.squareTopicCommentId,obj.squareTopicId)
+            CommentsActivity.launch(view.context, obj.squareTopicCommentId,obj.dynamicId)
             EventTrackingUtils.joinPoint(EventBeans("ck_publicsquare_coment", obj.userId?:""))
         }
 

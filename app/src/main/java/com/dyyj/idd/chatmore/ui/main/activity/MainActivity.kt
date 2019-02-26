@@ -28,7 +28,6 @@ import com.dyyj.idd.chatmore.model.database.entity.UserInfoEntity
 import com.dyyj.idd.chatmore.model.easemob.AudioMngHelper
 import com.dyyj.idd.chatmore.model.easemob.CallManager
 import com.dyyj.idd.chatmore.model.easemob.EasemobManager
-import com.dyyj.idd.chatmore.model.getui.BadgeIntentService
 import com.dyyj.idd.chatmore.model.getui.GeTuiManaage
 import com.dyyj.idd.chatmore.model.mqtt.MqttService
 import com.dyyj.idd.chatmore.model.mqtt.result.*
@@ -56,7 +55,6 @@ import com.taobao.sophix.SophixManager
 import com.umeng.analytics.MobclickAgent
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import me.leolin.shortcutbadger.ShortcutBadger
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import java.lang.ref.WeakReference
@@ -636,18 +634,21 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MyFrame
         }
     }
 
-    fun addFragment2(fragment: SystemMessageFragment) {
+    fun addFragment2(fragment: SystemMessageFragment,isUIThread: Boolean) {
         /*if (mForContent != null) {
             return
         }*/
-        //隐藏首页头部信息
-        mBinding.toolbarBgIv.visibility = View.GONE
-        mBinding.userCl.visibility = View.GONE
-        mBinding.walletLl2.visibility = View.VISIBLE
-        val layoutParams = mBinding.statusbarIv.layoutParams
-        layoutParams.height = getStatusBarHeight()+ DisplayUtils.dp2px(this, 25f)
-        mBinding.statusbarIv.layoutParams = layoutParams
-
+        if (isUIThread) {
+            //隐藏首页头部信息
+            Handler().postDelayed({
+                mBinding.userCl.visibility = View.GONE
+                mBinding.walletLl2.visibility = View.VISIBLE
+                mBinding.toolbarBgIv.visibility = View.GONE
+                val layoutParams = mBinding.statusbarIv.layoutParams
+                layoutParams.height = getStatusBarHeight()+ DisplayUtils.dp2px(this, 28f)
+                mBinding.statusbarIv.layoutParams = layoutParams
+            }, 20)
+        }
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setCustomAnimations(

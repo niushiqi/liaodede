@@ -233,7 +233,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
-                    android:drawableTop="@drawable/btn_gift_normal"
+                    android:drawableTop="@drawable/btn_fragment_lock"
                     android:visibility="gone"
                     android:text="送碎片"
                     android:textColor="#999999"
@@ -254,10 +254,10 @@
 
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/chat_more_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:background="#E3E3E5"
@@ -280,7 +280,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:drawableTop="@drawable/btn_gift_normal"
+                        android:drawableTop="@drawable/btn_shaizi_lock"
                         android:text="玩筛子"
                         android:textColor="#999999"
                         android:textSize="12sp"
@@ -292,7 +292,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:drawableTop="@drawable/btn_gift_normal"
+                        android:drawableTop="@drawable/btn_movie_lock"
                         android:text="看电影"
                         android:textColor="#999999"
                         android:textSize="12sp"
