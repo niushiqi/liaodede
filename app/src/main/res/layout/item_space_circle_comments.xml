@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_item_comments_head"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tv_item_comments_tag"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_message_system_head" />
+
+    <TextView
+        android:id="@+id/tv_item_comments_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_item_comments_head"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/iv_item_comments_head"
+        android:text="我是神经病"
+        android:textColor="@color/color_comment_name_enable"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_item_comment_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_item_comments_head"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/iv_item_comments_head"
+        android:text="10月1"
+        android:textColor="#999999"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_item_comments_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_item_comments_tag"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/bg_comment_chat"
+        android:gravity="center"
+        android:text="私聊TA"
+        android:textColor="#884D00"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_item_comments_nice"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tv_item_comments_tag"
+        android:layout_alignTop="@+id/tv_item_comments_chat"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/tv_item_comments_chat"
+        android:background="@drawable/bg_comment_nice_add"
+        android:gravity="center"
+        android:text="回复"
+        android:textColor="#FE9C33"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_item_comments_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_item_comments_head"
+        android:layout_alignStart="@+id/tv_item_comment_time"
+        android:layout_alignEnd="@+id/tv_item_comments_chat"
+        android:layout_marginTop="13dp"
+        android:layout_toStartOf="@+id/ll_praise"
+        android:hint="这家伙很懒，什么也没说..."
+        android:textColor="@color/color_3E3E3E"
+        android:textSize="12sp" />
+
+    <com.dyyj.idd.chatmore.weiget.MyGridView
+        android:id="@+id/gv_item_comment_pic"
+        style="@style/mygridview"
+        android:layout_below="@+id/tv_item_comments_comment"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tv_item_comments_comment"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        android:background="#ffe0dade" />
+
+</RelativeLayout>

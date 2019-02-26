@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left|top"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shape_bg_black" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="12dp"
+            android:gravity="left"
+            android:textColor="#ff686868"
+            android:textSize="13sp"
+            tools:text="参与 2981人" />
+
+        <TextView
+            android:id="@+id/tv_people_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="32dp"
+            android:gravity="left"
+            android:textColor="#ffb1b1b1"
+            android:textSize="10sp"
+            tools:text="参与 2981人" />
+
+
+    </FrameLayout>
+</layout>

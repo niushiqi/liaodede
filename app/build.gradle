@@ -1,0 +1,586 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-platform-android'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'cloudwise'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.dyyj.idd.chatmore"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 172
+        versionName "1.7.2"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        releaseConfig {
+            storeFile file("channel.jks")
+            storePassword "123456"
+            keyAlias "channel"
+            keyPassword "123456"
+        }
+        debugConfig {
+            storeFile file('channel.jks')
+            storePassword "123456"
+            keyAlias "channel"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            multiDexEnabled true
+            manifestPlaceholders = ["EASEMOB_APPKEY": "1124180803228057#liaodede",
+
+                                    //测试
+                                    GETUI_APP_ID    : "rtCY5U8n1b5pwn1MkWRNSA",
+                                    GETUI_APP_KEY   : "djJzGrXDis7ys4MSrWkmV",
+                                    GETUI_APP_SECRET: "f4qXDnrqnq9jigkqpnLN04",
+
+                                    XIAOMI_APP_ID   : "2882303761517909218",
+                                    XIAOMI_APP_KEY  : "5821790934218",
+
+                                    MEIZU_APP_ID    : "MZ_APP_ID",
+                                    MEIZU_APP_KEY   : "MZ_APP_KEY",
+
+                                    HUAWEI_APP_ID   : "100388175",
+
+                                    OPPO_APP_ID    : "3694148",
+                                    OPPO_APP_KEY    : "6c8a987c36354cd0a288b2459d3ea803",
+                                    OPPO_APP_SECRET : "a530cb4290074c72af7ade456d93881e"]
+            signingConfig signingConfigs.debugConfig
+//      manifestPlaceholders = ["EASEMOB_APPKEY": "1124180803228057#liaodede"]
+        }
+        stage {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            multiDexEnabled true
+            manifestPlaceholders = ["EASEMOB_APPKEY": "1124180803228057#liaodede",
+                                    GETUI_APP_ID    : "OmYnVg2hPw9MIyrP2kyRr4",
+                                    GETUI_APP_KEY   : "UgsF7YmSlg9Lketvl7HqR6",
+                                    GETUI_APP_SECRET: "pXGhavqBct874BmblSb3u1",
+
+                                    XIAOMI_APP_ID   : "2882303761517847213",
+                                    XIAOMI_APP_KEY  : "5281784782213",
+
+                                    MEIZU_APP_ID    : "MZ_APP_ID",
+                                    MEIZU_APP_KEY   : "MZ_APP_KEY",
+
+                                    HUAWEI_APP_ID   : "100373913",
+                                    OPPO_APP_KEY    : "6c8a987c36354cd0a288b2459d3ea803",
+                                    OPPO_APP_SECRET : "a530cb4290074c72af7ade456d93881e"
+            ]
+            signingConfig signingConfigs.releaseConfig
+        }
+        //正式包名测试服
+        unstage{
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            multiDexEnabled true
+            manifestPlaceholders = ["EASEMOB_APPKEY": "1124180803228057#liaodede",
+
+                                    //测试
+                                    GETUI_APP_ID    : "rtCY5U8n1b5pwn1MkWRNSA",
+                                    GETUI_APP_KEY   : "djJzGrXDis7ys4MSrWkmV",
+                                    GETUI_APP_SECRET: "f4qXDnrqnq9jigkqpnLN04",
+
+                                    XIAOMI_APP_ID   : "2882303761517847213",
+                                    XIAOMI_APP_KEY  : "5281784782213",
+
+                                    MEIZU_APP_ID    : "MZ_APP_ID",
+                                    MEIZU_APP_KEY   : "MZ_APP_KEY",
+
+                                    HUAWEI_APP_ID   : "100373913",
+
+                                    OPPO_APP_KEY    : "6c8a987c36354cd0a288b2459d3ea803",
+                                    OPPO_APP_SECRET : "a530cb4290074c72af7ade456d93881e"
+            ]
+            signingConfig signingConfigs.releaseConfig
+        }
+
+        release {
+            debuggable true
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = ["EASEMOB_APPKEY": "1124180803228057#liaodede",
+                                    GETUI_APP_ID    : "OmYnVg2hPw9MIyrP2kyRr4",
+                                    GETUI_APP_KEY   : "UgsF7YmSlg9Lketvl7HqR6",
+                                    GETUI_APP_SECRET: "pXGhavqBct874BmblSb3u1",
+
+                                    XIAOMI_APP_ID   : "2882303761517847213",
+                                    XIAOMI_APP_KEY  : "5281784782213",
+
+                                    MEIZU_APP_ID    : "MZ_APP_ID",
+                                    MEIZU_APP_KEY   : "MZ_APP_KEY",
+
+                                    HUAWEI_APP_ID   : "100373913",
+
+
+                                    OPPO_APP_ID    : "3694148",
+                                    OPPO_APP_KEY    : "6c8a987c36354cd0a288b2459d3ea803",
+                                    OPPO_APP_SECRET : "a530cb4290074c72af7ade456d93881e"]
+            signingConfig signingConfigs.releaseConfig
+//      manifestPlaceholders = ["EASEMOB_APPKEY": "1110180622253005#ldd"]
+        }
+    }
+    flavorDimensions "color"
+    productFlavors {
+        firdev {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore.dev"
+            manifestPlaceholders = [flavors_name: "firdev", definechannel: "10001"]
+            signingConfig signingConfigs.debugConfig
+        }
+        firstage {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore.stage"
+            manifestPlaceholders = [flavors_name: "firstage", definechannel: "10001"]
+        }
+        firunstage {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firstage", definechannel: "10001"]
+        }
+        firmaster {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10001"]
+        }
+        firmaster10001 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10001"]
+            signingConfig signingConfigs.releaseConfig
+        }
+        firmaster10002 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10002"]
+        }
+        firmaster10003 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10003"]
+        }
+        firmaster10004 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10004"]
+        }
+        firmaster10005 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10005"]
+        }
+        firmaster10006 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10006"]
+        }
+        firmaster10007 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10007"]
+        }
+        firmaster10008 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10008"]
+        }
+        firmaster10009 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10009"]
+        }
+        firmaster10010 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "10010"]
+        }
+        firmaster20001 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20001"]
+        }
+        firmaster20002 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20002"]
+        }
+        firmaster20003 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20003"]
+        }
+        firmaster20004 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20004"]
+        }
+        firmaster20005 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20005"]
+        }
+        firmaster20006 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20006"]
+        }
+        firmaster20007 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20007"]
+        }
+        firmaster20008 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20008"]
+        }
+        firmaster20009 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20009"]
+        }
+        firmaster20010 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20010"]
+        }
+        firmaster20011 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "20011"]
+        }
+        firmaster0100101 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0100101"]
+        }
+        firmaster0100001 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0100001"]
+        }
+
+        firmaster0100201 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0100201"]
+        }
+        firmaster0100301 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0100301"]
+        }
+        firmaster0200101 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0200101"]
+        }
+        firmaster0200201 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0200201"]
+        }
+        firmaster0300201 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0300201"]
+        }
+        firmaster0300202 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0300202"]
+        }
+        firmaster0400101 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0400101"]
+        }
+        firmaster0300301 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0300301"]
+        }
+        firmaster0300302 {
+            dimension "color"
+            applicationId "com.dyyj.idd.chatmore"
+            manifestPlaceholders = [flavors_name: "firmaster", definechannel: "0300302"]
+        }
+    }
+
+
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //databind绑定
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+        disable 'MissingTranslation', 'UnusedResources'
+    }
+    useLibrary 'org.apache.http.legacy'
+    //jar包签名信息
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/rxjava.properties'
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    buildToolsVersion build_versions.build_tools
+}
+
+
+
+dependencies {
+
+    //  api fileTree(include: ['*.jar'], dir: 'src/main/libs')
+
+    //android默认
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    api deps.support.app_compat
+    api deps.constraint_layout
+    api deps.support.design
+    api deps.support.v4
+    api deps.support.palette_v7
+    api deps.support.recyclerview
+
+    //  implementation deps.support.grid_layout
+
+    //滑动返回
+    api deps.swipebacklayout
+
+    //mvvm模式View绑定工具
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:support-v4:28.0.0'
+    kapt deps.databinding
+
+    //图片加载
+    api deps.glide
+
+    //权限拦截,去除V13jar包
+    api(deps.permissionsdispatcher) {
+        exclude module: "support-v13"
+    }
+    kapt deps.permissionsdispatcher_processor
+
+    //Dialog样式,比系统原生好用
+    api deps.dependencies
+
+    //Log日志
+    api deps.timber
+
+    //图片缩放
+    api deps.photoview
+
+    //viewPger 角标
+    api deps.circleindicator
+
+    //图片选择
+    api deps.matisse
+
+    //Recyclerview分隔线
+    api deps.flexibledivider
+
+    //Glide图形变化
+    api deps.glide_transformations
+
+    //tabLayout可以底部也可以标题分栏
+    api deps.tablayout
+
+    //轮播图控件
+    api deps.banner
+
+    //retrofit系列全家桶
+    api deps.squareup.okhttp
+    api deps.squareup.retrofit2
+    api deps.squareup.converter_gson
+    api deps.squareup.converter_scalars
+    api deps.squareup.adapter_rxjava2
+    api deps.squareup.logging_interceptor
+
+    //Rx系列库
+    api deps.rx.rxjava2
+    api deps.rx.rxandroid
+
+    //json解析
+    api deps.gson
+
+    //事件传递
+    api deps.eventbus
+
+    //图片压缩
+    api deps.Luban
+
+    //分包
+    api deps.multidex
+
+    //转拼音
+
+    //  api deps.tinypinyin.core
+
+    //  api deps.tinypinyin.android
+
+    //通讯录右边索引View
+
+    //  api deps.suspension_index_bar
+
+    //js交互相关库
+
+    //  api deps.stetho.core
+
+    //  api deps.stetho.okhttp3
+    api deps.great_tao.hybrid
+
+    //版本升级全家桶,后面全去掉一些重复功能jar
+
+    //  api deps.great_tao.update_app
+
+    //  api deps.great_tao.update_app_kotlin
+
+    //  api deps.okhttp_utils
+
+    //友盟
+
+    //api deps.umeng_common
+
+    //api deps.umeng_analytics
+
+    //room数据库大保
+    api 'android.arch.persistence.room:runtime:1.1.0'
+    kapt "android.arch.persistence.room:compiler:1.1.0"
+    api 'android.arch.persistence.room:rxjava2:1.1.0'
+    /*api 'android.arch.persistence.room:runtime:1.1.1-rc1'
+    kapt "android.arch.persistence.room:compiler:1.1.1-rc1"
+    api 'android.arch.persistence.room:rxjava2:1.1.1-rc1'*/
+
+    //  debugApi 'com.amitshekhar.android:debug-db:1.0.0'
+
+    //动画 - 更换最新版本解决9.0适配问题
+    //api('com.airbnb.android:lottie:2.5.4') {
+    api('com.airbnb.android:lottie:2.7.0') {
+        exclude module: "appcompat-v7"
+    }
+
+    //弹幕库
+    api 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    api 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+    api 'com.github.ctiao:ndkbitmap-x86:0.9.21'
+
+    //进度条
+    api 'com.akexorcist:RoundCornerProgressBar:2.0.3'
+
+    //图表库
+    api 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    //推送
+    api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    api 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+
+    //视频/语音
+    api 'com.hyman:flowlayout-lib:1.1.2'
+    api files('libs/hyphenatechat_3.4.2.jar')
+
+    //  compile ('com.hyphenate:hyphenate-sdk:3.3.0')
+    api 'com.parse:parse-android:1.13.1'
+    api 'com.contrarywind:Android-PickerView:4.1.4'
+    api 'com.google.android:flexbox:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+    releaseImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+    stageImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+    api 'com.qianwen:update-app:3.5.2'
+    implementation 'com.qianwen:okhttp-utils:3.8.0'
+
+    //个推
+    implementation files('libs/json_simple-1.1.jar')
+//    implementation files('libs/GetuiSDK2.12.4.5-support-OPPO-1.0.0.jar')
+    implementation files('libs/alipaySdk-20180601.jar')
+
+    //微信分享
+    //  compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation files('libs/GetuiSDK-support-HWP-1.0.4.jar')
+    implementation files('libs/GetuiSDK-support-MZP-1.0.6.jar')
+    implementation files('libs/GetuiSDK-support-XMP-1.0.3.jar')
+    implementation files('libs/GetuiSDK-support-OPPO-1.0.2.jar')
+    implementation files('libs/GetuiSDK2.12.5.0.jar')
+    implementation 'com.github.Labmem003:NotificationPageHelper:1.0.1'
+
+    //通知库
+    implementation files('libs/umeng-share-core-6.9.4.jar')
+    implementation files('libs/umeng-sharetool-6.9.4.jar')
+    implementation files('libs/umeng-share-wechat-simplify-6.9.4.jar')
+    implementation files('libs/umeng-common-1.5.4.jar')
+    implementation files('libs/umeng-share-QQ-simplify-6.9.4.jar')
+    implementation files('libs/umeng-share-sina-simplify-6.9.4.jar')
+    implementation files('libs/umeng-analytics-7.5.4.jar')
+//    implementation files('libs/utdid4all-1.1.5.3_proguard.jar')
+
+    //圆形进度条
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+
+    //引导页
+    implementation 'com.github.huburt-Hu:NewbieGuide:v2.4.0'
+    implementation 'android.arch.lifecycle:runtime:1.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    implementation files('libs/pinyin4j-2.5.0.jar')
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation files('libs/smantifraud.jar')
+
+    //    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+//    implementation 'com.cloudwise.mobile.android.distribute:cloudwise-mobile-distribute:1.6.2'
+
+    // nice Dialog
+    implementation 'com.github.Othershe:NiceDialog:1.1.1'
+    implementation 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+    implementation 'me.jessyan:autosize:1.1.0'
+
+    //黄油刀
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    androidTestImplementation 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    //广告弹窗
+    implementation 'cn.yipianfengye.android:ad-library:1.0'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+
+    //APP角标
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+
+    //阿里云热修复
+    implementation ('com.aliyun.ams:alicloud-android-hotfix:3.2.8') {
+        exclude(module:'alicloud-android-utdid')
+    }
+
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll" />
+
+            <!--普通话题-->
+            <FrameLayout
+                android:id="@+id/head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll" />
+
+            <!--4选项投票结果-->
+            <ViewStub
+                android:id="@+id/head_select_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/layout_plaza_topic_head_select_result"
+                app:layout_scrollFlags="scroll" />
+
+            <!--2选项投票结果-->
+            <ViewStub
+                android:id="@+id/head_select_result_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/layout_plaza_topic_head_select_result_2"
+                app:layout_scrollFlags="scroll" />
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tl_4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:paddingLeft="40dp"
+                app:tl_indicator_color="#A86902"
+                app:tl_indicator_width="40dp"
+                app:tl_tab_padding="20dp"
+                app:tl_tab_space_equal="false"
+                app:tl_textBold="SELECT"
+                app:tl_textSelectColor="#A86902"
+                app:tl_textUnselectColor="#ACACAC"
+                app:tl_textsize="14sp" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tv_posted"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right|bottom"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_plaza_topic_posted"
+            android:gravity="bottom|center_horizontal"
+            android:paddingBottom="13dp"
+            android:text="发广场动态"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</layout>

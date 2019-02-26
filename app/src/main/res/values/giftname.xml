@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="string_gift_name">
+
+        <item>玫瑰</item>
+        <item>星星</item>
+        <item>棒棒糖</item>
+        <item>苹果</item>
+        <item>熊抱</item>
+        <item>扎啤</item>
+        <item>烈焰红唇</item>
+        <item>皇冠</item>
+        <item>哆啦A梦</item>
+        <item>好贵的包</item>
+        <item>为爱股掌</item>
+        <item>心钻</item>
+        <item>雪糕</item>
+        <item>切克闹</item>
+
+    </string-array>
+
+
+    <!--<string name="string_name1">    玫瑰</string>
+    <string name="string_name2">    星星</string>
+    <string name="string_name3">    棒棒糖</string>
+    <string name="string_name4">    苹果</string>
+    <string name="string_name5">    熊抱</string>
+    <string name="string_name6">    扎啤</string>
+    <string name="string_name7">    烈焰红唇</string>
+    <string name="string_name8">    皇冠</string>
+    <string name="string_name9">    哆啦A梦</string>
+    <string name="string_name10">   好贵的包</string>
+    <string name="string_name11">   为爱股掌</string>
+    <string name="string_name12">   心钻</string>
+    <string name="string_name13">   雪糕</string>
+    <string name="string_name14">   切克闹</string>-->
+</resources>

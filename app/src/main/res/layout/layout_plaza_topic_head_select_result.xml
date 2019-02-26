@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--话题页，投票类型 头部-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="left"
+            android:textColor="#444444"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="身为废柴的日常" />
+
+        <include
+            android:id="@+id/option1"
+            layout="@layout/item_plaza_topic_select_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <include
+            android:id="@+id/option2"
+            layout="@layout/item_plaza_topic_select_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/option1" />
+
+        <include
+            android:id="@+id/option3"
+            layout="@layout/item_plaza_topic_select_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/option2" />
+
+        <include
+            android:id="@+id/option4"
+            layout="@layout/item_plaza_topic_select_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/option3" />
+
+
+        <TextView
+            android:id="@+id/tv_people_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="#999999"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/option4"
+            tools:text="4123人正在参与" />
+
+        <TextView
+            android:id="@+id/tv_comment_num"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:minWidth="40dp"
+            android:paddingStart="18dp"
+            android:singleLine="true"
+            android:textColor="#999999"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_people_num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_people_num"
+            tools:text="33" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_plaza_topic_head_comment"
+            android:tint="#999999"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_comment_num"
+            app:layout_constraintStart_toStartOf="@+id/tv_comment_num"
+            app:layout_constraintTop_toTopOf="@+id/tv_comment_num" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

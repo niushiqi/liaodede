@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="10dp"
+      android:paddingBottom="10dp"
+      >
+    <ImageView
+        android:id="@+id/avatar_iv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/bg_circle_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/bg_iv"
+        android:layout_width="224dp"
+        android:layout_height="84dp"
+        android:background="@drawable/bg_chat_gift_card"
+        android:layout_marginEnd="9dp"
+        app:layout_constraintEnd_toStartOf="@id/avatar_iv"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:text="送井田二次次太郎"
+        android:textSize="12sp"
+        android:textColor="#3E3E3E"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/gift_image_iv"
+        app:layout_constraintTop_toTopOf="@id/bg_iv"/>
+
+    <TextView
+        android:id="@+id/gift_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="12dp"
+        android:text="啤酒 ×100"
+        android:textSize="10sp"
+        android:textColor="#986729"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="@id/name_tv"
+        app:layout_constraintTop_toBottomOf="@id/name_tv"/>
+
+    <TextView
+        android:id="@+id/price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:text="可兑换为金币"
+        android:textSize="8sp"
+        android:textColor="#CDCDCD"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="@id/gift_tv"
+        app:layout_constraintTop_toBottomOf="@id/gift_tv"/>
+
+    <ImageView
+        android:id="@+id/gift_image_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintStart_toStartOf="@id/bg_iv"
+        app:layout_constraintTop_toTopOf="@id/bg_iv"/>
+
+  </android.support.constraint.ConstraintLayout>
+</layout>

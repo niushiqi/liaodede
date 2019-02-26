@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="230dp"
+        android:layout_height="295dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_dialog_whith"
+        >
+
+      <ImageView
+          android:layout_width="2dp"
+          android:layout_height="12dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="22dp"
+          android:src="@drawable/ic_dialog_tip_pressed"
+          />
+      <ImageView
+          android:id="@+id/close_iv"
+          android:layout_width="18dp"
+          android:layout_height="18dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="10dp"
+          android:src="@drawable/btn_dialog_close_normal"
+          />
+      <ImageView
+          android:id="@+id/avatar_iv"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:layout_marginTop="45dp"
+          android:src="@drawable/ic_dialog_avatar_normal"
+          />
+
+      <ImageView
+          android:id="@+id/avatar_show_iv"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          app:layout_constraintStart_toStartOf="@+id/avatar_iv"
+          app:layout_constraintEnd_toEndOf="@+id/avatar_iv"
+          app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+          app:layout_constraintBottom_toBottomOf="@+id/avatar_iv"
+          />
+
+      <TextView
+          android:id="@+id/avatar_unapprove_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@+id/avatar_iv"
+          app:layout_constraintStart_toStartOf="@+id/avatar_iv"
+          app:layout_constraintEnd_toEndOf="@+id/avatar_iv"
+          android:layout_marginTop="26dp"
+          android:text="头像未审核通过"
+          android:textColor="#ff3e3e3e"
+          android:textSize="14sp"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@+id/avatar_unapprove_tv"
+          app:layout_constraintStart_toStartOf="@+id/avatar_unapprove_tv"
+          app:layout_constraintEnd_toEndOf="@+id/avatar_unapprove_tv"
+          android:layout_marginTop="8dp"
+          android:text="请重新上传后再开启聊天"
+          android:textColor="#ff999999"
+          android:textSize="12sp"
+          />
+
+      <android.support.v7.widget.AppCompatButton
+          android:id="@+id/upload_avatar_btn"
+          android:layout_width="100dp"
+          android:layout_height="39dp"
+          android:background="@drawable/rect_rounded_left_right_arc"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginBottom="20dp"
+          android:text="上传头像"
+          android:textColor="#ff884d00"
+          android:textSize="14sp"
+          />
+    </android.support.constraint.ConstraintLayout>
+  </RelativeLayout>
+</layout>

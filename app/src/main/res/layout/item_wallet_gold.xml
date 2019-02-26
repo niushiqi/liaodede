@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <data>
+    <variable
+        name="model"
+        type="com.dyyj.idd.chatmore.model.network.result.CoinSummaryResult.Data.CoinHistory"
+        />
+  </data>
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      >
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@{model.consumeMark}"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        tools:text="首次邀请新人成功"
+        android:textColor="#3E3E3E"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:id="@+id/price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/name_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/name_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@{model.consumeValue}"
+        android:layout_marginEnd="30dp"
+        tools:text="现金 3.55 元"
+        android:textColor="#3E3E3E"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/price_tv"
+        app:layout_constraintTop_toBottomOf="@+id/price_tv"
+        android:layout_marginTop="3dp"
+        tools:text="2018-05-06"
+        android:textColor="#999999"
+        android:textSize="9sp"
+        />
+  </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/iv_moshi"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="20dp"
+              android:layout_marginTop="10dp"
+              android:orientation="horizontal"
+              android:visibility="invisible">
+
+    <ImageView
+        android:id="@+id/iv_gift_icon"
+        android:layout_width="16dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_gift_moshi"/>
+
+    <TextView
+        android:id="@+id/tv_gift_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="7dp"
+        android:text="+ 20"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+</LinearLayout>

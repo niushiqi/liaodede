@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--我的空间 toolbar-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dyyj.idd.chatmore.viewmodel.PlazaSpaceViewModel" />
+
+        <variable
+            name="vm"
+            type="PlazaSpaceViewModel" />
+    </data>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="#41262F"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <!--head-->
+            <include
+                android:id="@+id/head"
+                layout="@layout/layout_toolbar_space_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="pin" />
+
+            <!--toolbar-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="top"
+                android:theme="@style/toolbar_theme"
+                app:contentInsetStart="0dp"
+                app:elevation="4dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title=""
+                app:titleTextColor="#cc000000">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/toolbar_back_iv"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="4dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_ab_back"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/toolbar_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@+id/toolbar_back_iv"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="Home" />
+
+                    <TextView
+                        android:id="@+id/txt_message"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:onClick="@{v->vm.showMessage(v)}"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:text="我的消息"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="#f4f4f4"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+        <!--tab-->
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/afl_person"
+            app:tl_indicator_color="#A86902"
+            app:tl_indicator_width="40dp"
+            app:tl_tab_padding="20dp"
+            app:tl_tab_space_equal="false"
+            app:tl_textBold="SELECT"
+            app:tl_textSelectColor="#A86902"
+            app:tl_textUnselectColor="#ACACAC"
+            app:tl_textsize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_black"
+            android:onClick="@{view->vm.showUnReadMessage(view)}"
+            android:visibility="gone"
+            app:layout_scrollFlags="scroll"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:src="@drawable/bg_circle_black" />
+
+            <TextView
+                android:id="@+id/txt_msg_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:layout_toRightOf="@id/iv_avatar"
+                android:text="3条新消息"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="6dp"
+                android:layout_height="11dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/txt_msg_num"
+                android:src="@drawable/ic_right_white" />
+        </RelativeLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+</layout>

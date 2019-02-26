@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/base_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e6000000">
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="105dp"
+                app:srcCompat="@drawable/ic_no_work"/>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView19"
+                android:layout_marginTop="33dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="5dp"
+                android:text="产品内提现功能正在研发中\n近期上线，敬请期待"
+                android:textColor="#FFE8AE"
+                android:textSize="18sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/textView16"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="内测期间"
+                        android:textColor="#FFE8AE"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="请微信搜索并添加官方号为好友"
+                        android:textColor="#FFE8AE"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView16"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal"
+                        android:text="（官方号：happy_ldd）"
+                        android:textColor="#FF1509"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView18"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal"
+                        android:text="回复”提现”二字"
+                        android:textColor="#FFE8AE"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView19"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="即可申请  1元提现资格"
+                        android:textColor="#FFE8AE"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="wrap_content"
+                android:layout_height="11dp"
+                android:layout_alignRight="@id/imageView19"
+                android:layout_alignTop="@id/imageView19"
+                app:srcCompat="@drawable/ic_no_work_close"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="45dp"
+      android:background="#FAE078"
+      >
+
+    <ImageView
+        android:id="@+id/notifacation_iv"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_message_notification_normal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/notifacation_iv"
+        app:layout_constraintBottom_toBottomOf="@+id/notifacation_iv"
+        app:layout_constraintStart_toEndOf="@+id/notifacation_iv"
+        android:layout_marginStart="15dp"
+        android:text="消息通知"
+        android:textColor="#ff884d00"
+        android:textSize="12sp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_message_new_normal"
+        />
+  </android.support.constraint.ConstraintLayout>
+</layout>

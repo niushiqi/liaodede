@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar1"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_image"
+            android:layout_width="180dp"
+            android:layout_height="253dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar">
+
+            <ImageView
+                android:id="@+id/iv_bg_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_share_bg_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="74dp"
+                android:background="@drawable/ic_share_bg_1"
+                app:layout_constraintEnd_toEndOf="@id/iv_bg_2"
+                app:layout_constraintStart_toStartOf="@id/iv_bg_2"
+                app:layout_constraintTop_toTopOf="@id/iv_bg_2">
+
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="22dp"
+                    android:text="邀请码"
+                    android:textColor="#2C334F"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:id="@+id/txt_invite_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:hint="RG290K"
+                    android:textColor="#2C334F"
+                    android:textSize="16sp"/>
+
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_share"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_image">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F3F3F3"/>
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="21dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/ic_share_ren"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/iv_left"
+                android:text="发送给好友"
+                android:textColor="#3E3E3E"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_share_jiantou"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#F3F3F3"/>
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

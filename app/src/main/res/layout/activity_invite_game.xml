@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="精选推荐(分享到微信可玩)"
+            android:textColor="#494949"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toolbar"/>
+
+        <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:id="@+id/constraintLayout4"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="35dp"-->
+            <!--android:layout_marginStart="35dp"-->
+            <!--android:layout_marginTop="19dp"-->
+            <!--android:background="@drawable/ic_invite_game_bg"-->
+            <!--android:elevation="10dp"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView47">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/imageView45"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="180dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent"-->
+                <!--app:srcCompat="@drawable/ic_default_game_top"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textview1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="18dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:text="答对五题，开红包"-->
+                <!--android:textColor="#494949"-->
+                <!--android:textSize="16sp"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/imageView45"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="15dp"-->
+                <!--android:layout_marginLeft="18dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="6 × 7 =？"-->
+                <!--android:textColor="#494949"-->
+                <!--android:textSize="16sp"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/textview1"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/likewan"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="34dp"-->
+                <!--android:background="@drawable/rect_round_solid_red"-->
+                <!--android:gravity="center"-->
+                <!--android:text="立刻玩"-->
+                <!--android:textColor="#FFFFFF"-->
+                <!--android:textSize="16sp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@id/textview1"/>-->
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_game"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView47"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

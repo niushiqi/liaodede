@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:paddingBottom="15dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp">
+
+        <ImageView
+            android:id="@+id/iv_item_dynamic_head"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_message_system_head" />
+
+        <TextView
+            android:id="@+id/tv_item_dynamic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_item_dynamic_head"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/iv_item_dynamic_head"
+            android:paddingTop="6dp"
+            android:text="包小宝"
+            android:textColor="@color/color_3E3E3E"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_item_dynamic_head"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_dynamic_head" />
+
+        <TextView
+            android:id="@+id/iv_item_dynamic_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/ic_square_level"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="3"
+            android:textColor="#BB3B53"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_dynamic_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_item_dynamic_name" />
+
+        <TextView
+            android:id="@+id/tv_item_dynamic_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="7dp"
+            android:text="10月1日  13：28"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_dynamic_head"
+            app:layout_constraintLeft_toRightOf="@+id/iv_item_dynamic_head" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_item_dynamic_topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="15dp"
+        android:text="话题#身为废柴的日常#"
+        android:textColor="#FF715F"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_item_dynamic_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="42dp"
+        android:text="我的交友银行升级了，谢谢你每天为我生产10金币！"
+        android:textColor="#313840"
+        android:textSize="15sp" />
+
+    <com.dyyj.idd.chatmore.weiget.MyGridView
+        android:id="@+id/gv_item_dynamic_pic"
+        style="@style/mygridview"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="48dp">
+
+        <TextView
+            android:id="@+id/tv_item_dynamic_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableTop="@drawable/ic_dynamic_praise"
+            android:gravity="center"
+            android:text="+1"
+            android:textColor="#7F8D9C"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_item_dynamic_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:layout_toStartOf="@+id/tv_item_dynamic_praise"
+            android:drawableTop="@drawable/ic_comment_comment"
+            android:gravity="center"
+            android:text="@string/comments"
+            android:textColor="#7F8D9C"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

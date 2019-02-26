@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    android:id="@+id/cl_container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="5dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/shape_rect_normal_stroke">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        >
+        <TextView
+            android:id="@+id/tv_buy_pea_nums"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="88"
+            android:textColor="#A36451"
+            android:textSize="30dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_proud_peas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginStart="28dp"
+            android:text="得得豆"
+            android:textColor="#A36451"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="赠魔石100颗"
+            android:textColor="#A576D0"
+            android:textSize="9dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_weight="0.4"
+        android:id="@+id/tv_pay_cash"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥15"
+        android:textColor="#A36451"
+        android:textSize="15dp"
+        />
+
+
+
+
+</LinearLayout>
+
+</layout>

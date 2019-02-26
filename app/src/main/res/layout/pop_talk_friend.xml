@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6000000">
+       <!-- android:background="@drawable/ic_invite_pop_bg"-->
+
+        <RelativeLayout
+            android:id="@+id/rl_chat_tip"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_radius"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_chat_tip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_invite_pop_img"/>
+
+            <TextView
+                android:id="@+id/txt_chat_tip_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_chat_tip_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="9dp"
+                android:text="提醒好友"
+                android:textColor="#FF4029"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/txt_chat_tip_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_chat_tip_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:text="快打开聊得得!\n聊天加好友，跟我一起拿金币"
+                android:textColor="#1B1B1B"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/txt_tixing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_chat_tip_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_invite_pop_btn"
+                android:gravity="center"
+                android:text="微信告诉TA"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_invite_pop_close"/>
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

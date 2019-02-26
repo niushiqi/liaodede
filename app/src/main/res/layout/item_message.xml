@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <!--<data>-->
+        <!--<variable-->
+            <!--name="model"-->
+            <!--type="com.hyphenate.chat.EMConversation"-->
+            <!--/>-->
+    <!--</data>-->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/avatar_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/bg_circle_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="15dp"
+            android:text="语音匹配"
+            android:textColor="@color/white"
+            android:background="@drawable/rect_8acc2c_voice_bg"
+            android:textSize="9sp"
+            android:gravity="center"
+            android:id="@+id/tv_from_type"
+            app:layout_constraintRight_toRightOf="@id/avatar_iv"
+            app:layout_constraintBottom_toBottomOf="@id/avatar_iv"
+            app:layout_constraintLeft_toLeftOf="@id/avatar_iv"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff3e3e3e"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/avatar_iv"
+            app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+            tools:text="张三"
+            />
+
+        <TextView
+            android:id="@+id/message_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textColor="#ff999999"
+            tools:text="张三，你好啊"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/name_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            />
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:textColor="#999999"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="@+id/name_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/name_tv"
+            tools:text="18小时前"/>
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintEnd_toStartOf="@+id/space2"
+          app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+          >
+        <com.flyco.tablayout.widget.MsgView
+            android:id="@+id/message_tip_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:mv_backgroundColor="#FD481F"
+            app:mv_isRadiusHalfHeight="true"
+            />
+      </RelativeLayout>
+        <Space
+            android:id="@+id/space2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/avatar_iv"
+            app:layout_constraintStart_toEndOf="@+id/avatar_iv"
+            app:layout_constraintTop_toTopOf="@+id/avatar_iv"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

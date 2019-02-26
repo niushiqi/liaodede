@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--我的空间 toolbar 头部-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        tools:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_space_head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_person_head"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="88dp"
+            android:shadowColor="@color/white"
+            android:shadowRadius="2"
+            android:src="@drawable/ic_default_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_person_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_person_head"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_person_head"
+            app:layout_constraintTop_toTopOf="@+id/iv_person_head"
+            tools:text="以梦为马" />
+
+        <ImageView
+            android:id="@+id/iv_person_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_person_head"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_sex_femal"
+            app:layout_constraintBottom_toBottomOf="@id/tv_person_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_person_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_person_name" />
+
+        <TextView
+            android:id="@+id/tv_person_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_person_sex"
+            app:layout_constraintLeft_toRightOf="@+id/iv_person_sex"
+            app:layout_constraintTop_toTopOf="@+id/iv_person_sex"
+            tools:text="24岁" />
+
+        <TextView
+            android:id="@+id/tv_person_profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/view_person_age"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@+id/view_person_age"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_person_name"
+            app:layout_constraintTop_toBottomOf="@+id/iv_person_sex"
+            tools:text="学生" />
+
+        <TextView
+            android:id="@+id/tv_person_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            app:layout_constraintLeft_toRightOf="@+id/tv_person_profession"
+            app:layout_constraintTop_toTopOf="@+id/tv_person_profession"
+            tools:text="内蒙古" />
+
+
+        <com.dyyj.idd.chatmore.weiget.AutoFlowLayout
+            android:id="@+id/afl_person"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintLeft_toRightOf="@id/iv_person_head"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_person_profession"
+            app:lineCenter="false" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
+
+

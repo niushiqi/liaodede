@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_enabled="false"
+      android:drawable="@drawable/rect_rounded_left_right_arc10"/>
+  <item
+      android:state_enabled="true"
+      android:drawable="@drawable/rect_rounded_left_right_arc9"/>
+</selector>

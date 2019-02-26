@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:src="@drawable/shape_bg_black"/>
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="9dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#ffb1b1b1"
+            android:textSize="8sp"
+            tools:text="参与 2981人" />
+    </FrameLayout>
+</layout>

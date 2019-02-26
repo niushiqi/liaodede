@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <data>
+    <variable
+        name="rewardCoin"
+        type="java.lang.Double"
+        />
+
+    <variable
+        name="rewardStone"
+        type="java.lang.Double"
+        />
+
+    <variable
+        name="rewardCash"
+        type="java.lang.Double"
+        />
+    <import type="android.view.View" />
+  </data>
+  <android.support.constraint.ConstraintLayout
+      android:id="@+id/item_cl"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <LinearLayout
+        android:id="@+id/content_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="236dp"
+        android:background="@drawable/rect_rounded_left_right_arc17"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+      <TextView
+          android:id="@+id/title_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="40dp"
+          android:text="接通呼叫奖励"
+          android:textColor="#ffffffff"
+          android:textSize="18sp"
+          />
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="44dp"
+          android:layout_marginEnd="24dp"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="20dp"
+          android:orientation="horizontal"
+          >
+        <LinearLayout
+            android:id="@+id/gold_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{rewardCoin > 0? View.VISIBLE : View.GONE}"
+            >
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:scaleType="centerInside"
+              android:src="@drawable/ic_toast_jinbi_normal"
+              />
+          <TextView
+              android:id="@+id/gold_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:includeFontPadding="false"
+              android:textColor="#884D00"
+              android:textSize="18sp"
+              tools:text="50"
+              />
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:text="金币"
+              android:textColor="#ffffffff"
+              android:textSize="15sp"
+              />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stone_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{rewardStone > 0? View.VISIBLE : View.GONE}"
+            >
+          <ImageView
+              android:id="@+id/stone_iv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:scaleType="centerInside"
+              android:src="@drawable/ic_toast_moshi_normal"
+              />
+          <TextView
+              android:id="@+id/stone_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:includeFontPadding="false"
+              android:textColor="#884D00"
+              android:textSize="18sp"
+              tools:text="2.3"
+              />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:text="魔石"
+              android:textColor="#ffffffff"
+              android:textSize="15sp"
+              />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/money_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{rewardCash > 0? View.VISIBLE : View.GONE}"
+            >
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:scaleType="centerInside"
+              android:src="@drawable/ic_toast_xianjin_normal"
+              />
+          <TextView
+              android:id="@+id/money_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:includeFontPadding="false"
+              android:textColor="#884D00"
+              android:textSize="18sp"
+              tools:text="+2.13"
+              />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:text="现金"
+              android:textColor="#ffffffff"
+              android:textSize="15sp"
+              />
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+  </android.support.constraint.ConstraintLayout>
+</layout>

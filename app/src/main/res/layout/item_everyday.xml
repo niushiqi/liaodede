@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <data>
+    <variable
+        name="model"
+        type="com.dyyj.idd.chatmore.model.network.result.EverydayResult"
+        />
+    <import type="android.view.View" />
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      >
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="新手任务"
+        android:textColor="#ff666666"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="#ff3e3e3e"
+        android:textSize="14sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_tv"
+        tools:text="首次邀请新人成功"
+        />
+
+    <TextView
+        android:id="@+id/cash_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:textColor="#ff999999"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/name_tv"
+        tools:text="现金3元"
+        />
+
+    <TextView
+        android:id="@+id/coin_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="#ff999999"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cash_tv"
+        app:layout_constraintStart_toEndOf="@+id/cash_tv"
+        app:layout_constraintTop_toTopOf="@+id/cash_tv"
+        tools:text="金币3元"
+        />
+
+    <TextView
+        android:id="@+id/stone_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@{model.rewardStone}"
+        android:textColor="#ff999999"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/coin_tv"
+        app:layout_constraintStart_toEndOf="@+id/coin_tv"
+        app:layout_constraintTop_toTopOf="@+id/coin_tv"
+        tools:text="魔石20枚"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/get_btn"
+        android:layout_width="70dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rect_rounded_left_right_arc"
+        android:visibility="@{model.status == 0? View.VISIBLE: View.GONE}"
+        android:text="领取"
+        android:textColor="#ff884d00"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cash_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_tv"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/complete_btn"
+        android:layout_width="70dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rect_rounded_left_right_arc2"
+        android:visibility="@{model.status == 1? View.VISIBLE: View.GONE}"
+        android:text="去完成"
+        android:textColor="#ff884d00"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cash_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_tv"
+        />
+
+    <TextView
+        android:id="@+id/completed_btn"
+        android:layout_width="70dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:visibility="@{model.status == 2? View.VISIBLE: View.GONE}"
+        android:text="已领取"
+        android:textColor="#ff999999"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cash_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_tv"
+        />
+
+  </android.support.constraint.ConstraintLayout>
+</layout>

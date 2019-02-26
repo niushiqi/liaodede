@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5">
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_4"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:paddingLeft="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tl_indicator_color="#A86902"
+            app:tl_indicator_width="40dp"
+            app:tl_tab_padding="20dp"
+            app:tl_tab_space_equal="false"
+            app:tl_textBold="SELECT"
+            app:tl_textSelectColor="#A86902"
+            app:tl_textUnselectColor="#ACACAC"
+            app:tl_textsize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="我关注的"
+            android:textColor="#884D00"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/tl_4"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tl_4" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="23dp"
+            android:layout_height="14dp"
+            android:background="@drawable/shape_bg_round_red"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            android:visibility="visible"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_1"
+            app:layout_constraintLeft_toRightOf="@id/tv_1"
+            app:layout_constraintRight_toRightOf="@id/tv_1"
+            app:layout_constraintTop_toTopOf="@id/tv_1"
+            tools:text="99+" />
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="15dp"
+            android:layout_height="10dp"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/ic_plaza_watch"
+            app:layout_constraintBottom_toBottomOf="@id/tv_1"
+            app:layout_constraintRight_toLeftOf="@id/tv_1"
+            app:layout_constraintTop_toTopOf="@id/tv_1" />
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_4" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

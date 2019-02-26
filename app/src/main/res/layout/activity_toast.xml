@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+  <data>
+    <import type="android.view.View" />
+    <variable
+        name="rewardCoin"
+        type="java.lang.Double"
+        />
+
+    <variable
+        name="rewardStone"
+        type="java.lang.Double"
+        />
+
+    <variable
+        name="rewardCash"
+        type="java.lang.Double"
+        />
+  </data>
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+
+    <LinearLayout
+        android:id="@+id/content_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rect_rounded_left_right_arc7"
+        >
+      <LinearLayout
+          android:id="@+id/gold_ll"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:layout_marginEnd="9dp"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:visibility="@{rewardCoin > 0? View.VISIBLE : View.GONE}"
+          >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_jinbi_normal"
+            />
+        <TextView
+            android:id="@+id/gold_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:includeFontPadding="false"
+            android:textColor="#884D00"
+            android:textSize="18sp"
+            tools:text="50"
+            />
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/stone_ll"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:layout_marginEnd="9dp"
+          android:visibility="@{rewardStone > 0? View.VISIBLE : View.GONE}"
+          >
+        <ImageView
+            android:id="@+id/stone_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_moshi_normal"
+            />
+        <TextView
+            android:id="@+id/stone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:includeFontPadding="false"
+            android:textColor="#884D00"
+            android:textSize="18sp"
+            tools:text="2.3"
+            />
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/money_ll"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:visibility="@{rewardCash > 0? View.VISIBLE : View.GONE}"
+          >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_xianjin_normal"
+            />
+        <TextView
+            android:id="@+id/money_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:includeFontPadding="false"
+            android:textColor="#884D00"
+            android:textSize="18sp"
+            tools:text="+2.13"
+            />
+      </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/text_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/content_ll"
+        app:layout_constraintEnd_toEndOf="@+id/content_ll"
+        app:layout_constraintBottom_toBottomOf="@+id/content_ll"
+        android:layout_marginBottom="25dp"
+        android:text="领取成功"
+        android:textColor="#ffffffff"
+        android:textSize="14sp"
+        />
+  </android.support.constraint.ConstraintLayout>
+</layout>

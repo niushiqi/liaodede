@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      >
+
+    <include
+        layout="@layout/layout_toolbar3"
+        android:id="@+id/layout_toolbar"
+        />
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/withdraw_btn"
+        app:layout_constraintTop_toBottomOf="@+id/layout_toolbar"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:background="#F9CF2B"
+            android:paddingBottom="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+          <TextView
+              android:id="@+id/price_title_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="30dp"
+              android:layout_marginTop="28dp"
+              android:text="当前余额"
+              android:textColor="#8B5107"
+              android:textSize="14sp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+              android:id="@+id/price_value_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="6dp"
+              android:text="0.00"
+              android:textColor="#8B5107"
+              android:textSize="37sp"
+              app:layout_constraintBottom_toBottomOf="@+id/textView62"
+              app:layout_constraintStart_toEndOf="@+id/textView62"
+              app:layout_constraintTop_toBottomOf="@+id/price_title_tv"
+              tools:ignore="MissingConstraints" />
+
+          <TextView
+              android:id="@+id/textView62"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="12dp"
+              android:text="￥"
+              android:textColor="#8B5107"
+              android:textSize="24sp"
+              app:layout_constraintStart_toStartOf="@+id/price_title_tv"
+              app:layout_constraintTop_toBottomOf="@+id/price_title_tv"
+              tools:ignore="MissingConstraints" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="19dp"
+            android:text="选择提现方式"
+            android:textColor="#ff3e3e3e"
+            android:textSize="12sp"
+            android:visibility="gone"
+            />
+
+       <!-- <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@drawable/image_tixian_bg1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+          <TextView
+              android:id="@+id/textView63"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="28dp"
+              android:layout_marginTop="12dp"
+              android:text="注意：当前无法提现"
+              android:textColor="#F41515"
+              android:textSize="10sp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+              android:id="@+id/textView64"
+              android:layout_width="wrap_content"
+              android:layout_height="20dp"
+              android:layout_marginTop="8dp"
+              android:text="1，需要身份认证后才能提现"
+              android:textSize="11sp"
+              app:layout_constraintStart_toStartOf="@+id/textView63"
+
+              app:layout_constraintTop_toBottomOf="@+id/textView63"
+              tools:ignore="MissingConstraints" />
+
+          <android.support.v7.widget.AppCompatButton
+              android:id="@+id/btn_identity"
+              android:layout_width="68dp"
+              android:layout_height="28dp"
+              android:layout_marginBottom="8dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginTop="8dp"
+              android:background="@drawable/image_tixian_btn1"
+              android:text="认证"
+              android:textColor="#8B5107"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintVertical_bias="0.473" />
+
+        </android.support.constraint.ConstraintLayout>   -->
+         <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="#FFFFcc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+           <TextView
+               android:id="@+id/tv_tip"
+               android:layout_width="wrap_content"
+               android:layout_height="19dp"
+               android:layout_marginBottom="8dp"
+               android:layout_marginTop="8dp"
+               android:layout_marginLeft="20dp"
+               android:text="需要身份认证后才能提现"
+               android:textSize="14sp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               tools:ignore="MissingConstraints" />
+
+             </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_withdraw"
+            >
+
+          <ImageView
+              android:id="@+id/pay_type_iv"
+              android:layout_width="39dp"
+              android:layout_height="39dp"
+              android:layout_marginBottom="9dp"
+              android:layout_marginStart="11dp"
+              android:layout_marginTop="9dp"
+              android:src="@drawable/ic_wechat_normal"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="19dp"
+              android:text="微信"
+              android:textColor="#ff3e3e3e"
+              android:textSize="14sp"
+              app:layout_constraintBottom_toBottomOf="@+id/pay_type_iv"
+              app:layout_constraintStart_toEndOf="@+id/pay_type_iv"
+              app:layout_constraintTop_toTopOf="@+id/pay_type_iv"
+              />
+
+          <android.support.v7.widget.AppCompatCheckBox
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="18dp"
+              android:checked="true"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.dyyj.idd.chatmore.weiget.MyGridView
+            android:id="@+id/gv_grideview"
+            android:layout_width="fill_parent"
+            android:listSelector="@android:color/transparent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:horizontalSpacing="15.0dip"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="15.0dip"
+
+            />
+        <TextView
+            android:id="@+id/tv_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:text=""
+            android:textColor="#ff999999"
+            android:textSize="11sp"
+            />
+      </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/withdraw_btn"
+        android:layout_width="245dp"
+        android:layout_height="49dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/rect_rounded_left_right_arc"
+        android:layout_marginBottom="20dp"
+        android:checked="false"
+        android:state_checked="false"
+        android:textSize="17sp"
+        android:textColor="#884D00"
+        android:gravity="center"
+        android:text="立即提现"
+        />
+  </android.support.constraint.ConstraintLayout>
+
+</layout>

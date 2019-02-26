@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      >
+    <include
+        layout="@layout/layout_toolbar1"
+        android:id="@+id/layout_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/logo_iv"
+        android:layout_width="88dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="89dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_toolbar"
+        />
+
+    <TextView
+        android:id="@+id/version_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="V1.5.7"
+        android:textColor="#ffa39b9b"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/logo_iv"
+        app:layout_constraintStart_toStartOf="@+id/logo_iv"
+        app:layout_constraintTop_toBottomOf="@+id/logo_iv"
+        />
+
+    <TextView
+        android:id="@+id/desc_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="边聊天 边赚钱"
+        android:textColor="#ff3e3e3e"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/version_tv"
+        />
+
+    <TextView
+        android:id="@+id/desc_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="开启全新的网络社交方式"
+        android:textColor="#ff3e3e3e"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tv1"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/version_btn"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/rect_rounded_left_right_arc"
+        android:text="版本更新"
+        android:textColor="#ff884d00"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tv2"
+        />
+
+    <TextView
+        android:id="@+id/company_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="北京多泽科技有限责任公司"
+        android:textColor="#ff999999"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:layout_width="109dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="Copyright © 2017 - 2018"
+        android:textColor="#ff999999"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toTopOf="@+id/company_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+  </android.support.constraint.ConstraintLayout>
+
+</layout>

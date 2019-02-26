@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="11dp">
+
+        <View
+            android:layout_width="338dp"
+            android:layout_height="158dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_text_chat_from_info" />
+
+        <ImageView
+            android:id="@+id/avatar_iv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="59dp"
+            android:src="@drawable/bg_circle_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="126dp"
+            android:layout_marginTop="25dp"
+            android:text="TA来自"
+            android:textColor="#ff6a6a6a"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="25dp"
+            android:text="广场"
+            android:textColor="#D38D14"
+            android:id="@+id/tv_from_type"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="132dp"
+            android:layout_marginTop="61dp"
+            android:textColor="#ff6a6a6a"
+            android:textSize="14sp"
+            android:id="@+id/tv_name"
+            tools:text="吼吼哈哈" />
+
+        <TextView
+            android:layout_width="196dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="132dp"
+            android:layout_marginTop="90dp"
+            android:text="回复来自广场的消息，获得20金币奖励！1分钟内无回复，金币就消失了哦~"
+            android:textColor="#ffa9a9ab"
+            android:id="@+id/tv_describe"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/task_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_square_chat_task"/>
+
+    </RelativeLayout>
+</layout>

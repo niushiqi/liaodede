@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="260dp"
+    android:layout_height="310dp"
+    android:background="@drawable/bg_convention_normal"
+    >
+
+    <ImageView
+        android:id="@+id/close_iv"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_dialog_close_normal"
+        />
+
+    <LinearLayout
+        android:id="@+id/magic_1l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_below="@id/close_iv"
+        android:layout_marginTop="12dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您的魔石不足"
+            android:textColor="#ff161616"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="----免费领魔石技巧----"
+            android:textColor="#6d6b6b"
+            android:textSize="12dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="1.去「任务」领取新手福利\n2.拆红包 ，无限次领魔石"
+            android:textColor="#6d6b6b"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_magic_stone" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/magic_1l"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        >
+
+        <TextView
+            android:id="@+id/store_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingTop="12dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="12dp"
+            android:text="去购买"
+            android:textColor="#4F4F4F"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/gift_btn"
+            android:layout_toRightOf="@id/store_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingTop="12dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="12dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/shape_small_orange"
+            android:text="领红包拿魔石"
+            android:textColor="#884D00"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

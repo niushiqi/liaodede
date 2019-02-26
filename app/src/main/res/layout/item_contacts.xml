@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <data>
+    <variable
+        name="model"
+        type="com.dyyj.idd.chatmore.model.network.result.ContactsResult.Data.Friends"
+        />
+  </data>
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <ImageView
+        android:id="@+id/avatar_iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bg_circle_black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:loadAvatar="@{model.friendAvatar}"
+        />
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/avatar_iv"
+        app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+        tools:text="张三"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="@{model.friendNickname}"
+        android:textColor="#ff3e3e3e"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/level_tv"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toEndOf="@+id/name_tv"
+        app:layout_constraintTop_toTopOf="@+id/name_tv"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/ic_level_normal2"
+        android:gravity="center"
+        tools:text="1"
+        android:text="@{model.friendUserLevel}"
+        android:textColor="#ffbb3b53"
+        android:textSize="10sp"
+        />
+
+    <TextView
+        android:id="@+id/age_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/level_tv"
+        app:layout_constraintTop_toTopOf="@+id/level_tv"
+        android:layout_marginStart="10dp"
+        android:text=" 女/24岁"
+        android:textColor="#ff999999"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:id="@+id/friend_level_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/name_tv"
+        android:layout_marginTop="12dp"
+        android:text="友好度 "
+        android:textColor="#999999"
+        android:textSize="9sp"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@{model.friendshipLevel}"
+        android:textColor="#ff999999"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/friend_level_tv"
+        app:layout_constraintTop_toTopOf="@+id/friend_level_tv"
+        app:layout_constraintBottom_toBottomOf="@id/friend_level_tv"
+        tools:text="F2"/>
+
+    <TextView
+        android:id="@+id/click_right_tv"
+        android:layout_width="47dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        android:background="@drawable/rect_rounded_left_right_arc"
+        android:gravity="center"
+        android:text="领取"
+        android:textColor="#884D00"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/avatar_iv"/>
+
+    <com.dyyj.idd.chatmore.weiget.LevelProgressView
+        android:id="@+id/cs_progress"
+        android:layout_width="0dp"
+        android:layout_height="11dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginStart="14dp"
+        android:text="TextView"
+        app:layout_constraintTop_toTopOf="@+id/friend_level_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/friend_level_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"/>
+  </android.support.constraint.ConstraintLayout>
+</layout>

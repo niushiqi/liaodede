@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:paddingStart="26dp"
+    android:paddingEnd="26dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/iv_item_square_head"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_message_system_head" />
+
+        <TextView
+            android:id="@+id/tv_item_square_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_item_square_head"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/iv_item_square_head"
+            android:paddingTop="6dp"
+            android:text="包小宝"
+            android:textColor="@color/color_3E3E3E"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_item_square_head"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_square_head" />
+
+
+        <TextView
+            android:id="@+id/tv_item_square_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="7dp"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_square_head"
+            app:layout_constraintLeft_toRightOf="@+id/iv_item_square_head"
+            tools:text="10月1日 13:28" />
+
+
+        <ImageView
+            android:id="@+id/iv_item_square_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="18dp"
+            android:paddingEnd="12dp"
+            android:src="@drawable/ic_square_comments"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/iv_item_square_head" />
+
+        <TextView
+            android:id="@+id/tv_item_square_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@+id/iv_item_square_type"
+            android:text="@string/square_comments"
+            android:textColor="@color/color_3E3E3E"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/iv_item_square_type"
+            app:layout_constraintTop_toBottomOf="@+id/iv_item_square_head" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_item_square_comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="哈哈哈，做废柴可以烧火加热..."
+        android:textColor="@color/color_3E3E3E"
+        android:textSize="15sp"
+        android:visibility="visible" />
+
+    <com.dyyj.idd.chatmore.weiget.MyGridView
+        android:id="@+id/gv_item_square_comment_pic"
+        style="@style/mygridview"
+        android:layout_marginTop="6dp"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ll_item_square_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F7F7F7" />
+
+        <TextView
+            android:id="@+id/tv_item_square_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="坏脑子的橡皮擦:"
+            android:textColor="#777777"
+            android:textSize="12sp" />
+
+        <com.dyyj.idd.chatmore.weiget.MyGridView
+            android:id="@+id/gv_item_square_reply_pic"
+            style="@style/mygridview"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_item_square_topic"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bg_corner5_f4f4f4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_square_comment_content">
+
+        <ImageView
+            android:id="@+id/iv_item_square_topic_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_square_demo" />
+
+        <TextView
+            android:id="@+id/tv_item_square_topic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/iv_item_square_topic_pic"
+            android:maxEms="11"
+            android:singleLine="true"
+            android:text="描述下你身边有什么样的废柴？"
+            android:textColor="@color/color_222"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_item_square_topic_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toRightOf="@+id/iv_item_square_topic_pic"
+            android:text="描述下你身边有什么样的废柴？"
+            android:textColor="@color/color_666666"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_square_next" />
+    </RelativeLayout>
+</LinearLayout>

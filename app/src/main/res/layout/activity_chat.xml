@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="model"
+            type="com.dyyj.idd.chatmore.model.mqtt.result.FriendshipRewardResult"
+            />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/chat_cl_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar6"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/chat_ll"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toolbar"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_friend_level">
+                <include
+                    android:id="@+id/layout_progress_box0"
+                    layout="@layout/layout_progress_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_friendliness_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/img_friendliness_question"
+                    app:layout_constraintTop_toTopOf="@id/layout_progress_box0"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_progress_box0"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="42dp"/>
+            </android.support.constraint.ConstraintLayout>
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:id="@+id/ll_start_voice_add_friend"
+                android:layout_gravity="center_horizontal">
+                
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:background="#f5f5f5"
+                    android:text="开启语音"
+                    android:textSize="13sp"
+                    android:id="@+id/btn_start_voice"
+                    android:textColor="#6a6a6a"/>
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:background="#f5f5f5"
+                    android:id="@+id/btn_add_friend"
+                    android:text="加好友"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="13dp"
+                    android:textColor="#6a6a6a"/>
+                
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_chat_message_left"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/chat_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/chat_cl"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#fff0f0f0"
+                >
+
+                <ImageView
+                    android:id="@+id/chat_emotion_open_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_chat_emotion_open"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/chat_send_btn"
+                    android:layout_width="65dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/selctor_btn1"
+                    android:enabled="false"
+                    android:text="发送"
+                    android:textColor="#ff884d00"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <EditText
+                    android:id="@+id/chat_content_et"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rect_rounded_left_right_arc8"
+                    android:hint="聊天升等级，拿更多金币"
+                    android:inputType="textAutoCorrect|textAutoComplete|textMultiLine|textCapSentences"
+                    android:paddingLeft="5dp"
+                    android:textColorHint="#999999"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/chat_send_btn"
+                    app:layout_constraintStart_toEndOf="@+id/chat_emotion_open_iv"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_some_func"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:gravity="center"
+                android:background="#E3E3E5"
+                >
+
+                <TextView
+                    android:id="@+id/voice_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/btn_voice_normal"
+                    android:text="语音连麦"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/picture_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/btn_picture_normal"
+                    android:text="发图片"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/gift_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/btn_gift_normal"
+                    android:text="送礼物"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    />
+
+                <!--<ImageView
+                    android:id="@+id/chat_add_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_chat_add_normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/bg_view"
+                    app:layout_constraintStart_toStartOf="@+id/bg_view"
+                    app:layout_constraintTop_toTopOf="@+id/bg_view"
+                    />-->
+
+                <TextView
+                    android:id="@+id/chat_add_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/ic_chat_add_normal"
+                    android:text="更多"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/debris_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/btn_gift_normal"
+                    android:visibility="gone"
+                    android:text="送碎片"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/more_fun_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:background="#E9E9E9"
+                android:gravity="left|center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/chat_more_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="#E3E3E5"
+                android:gravity="left|center_vertical"
+                android:orientation="vertical"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_game"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+
+                    <TextView
+                        android:id="@+id/shaizi_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:drawableTop="@drawable/btn_gift_normal"
+                        android:text="玩筛子"
+                        android:textColor="#999999"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/movie_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:drawableTop="@drawable/btn_gift_normal"
+                        android:text="看电影"
+                        android:textColor="#999999"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/put_away_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:drawableTop="@drawable/btn_put_away_normal"
+                        android:text="收起"
+                        android:textColor="#999999"
+                        android:textSize="12sp"
+                        />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chat_more_emotion"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:background="#F4F4F4">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_complate_emotion_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="163dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    />
+
+                <com.dyyj.idd.chatmore.weiget.EmojiIndicatorView
+                    android:id="@+id/ll_point_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/award_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:background="#fffee069"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/chat_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/get_tv"
+                android:layout_width="65dp"
+                android:layout_height="0dp"
+                android:background="#fff8cf2a"
+                android:gravity="center"
+                android:text="领取"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <android.support.v4.widget.Space
+                android:id="@+id/space"
+                android:layout_width="33dp"
+                android:layout_height="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/get_tv"
+                />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:text="友好度提升奖励"
+                android:textColor="#ff884d00"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/space"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:paddingBottom="7dp"
+                app:layout_constraintEnd_toStartOf="@+id/space"
+                app:layout_constraintStart_toStartOf="@+id/title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv"
+                >
+
+                <TextView
+                    android:id="@+id/rewardStoneTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="21dp"
+                    android:drawableStart="@drawable/ic_chat_stone_normal"
+                    android:gravity="center"
+                    android:text="300"
+                    android:textColor="#ffcf8019"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/rewardCashTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="21dp"
+                    android:drawableStart="@drawable/ic_chat_cash_normal"
+                    android:gravity="center"
+                    android:text="300"
+                    android:textColor="#ffcf8019"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/rewardCoinTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="21dp"
+                    android:drawableStart="@drawable/ic_chat_coin_normal"
+                    android:gravity="center"
+                    android:text="300"
+                    android:textColor="#ffcf8019"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    />
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

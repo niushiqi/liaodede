@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/item_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/shadow2"
+        >
+
+        <ImageView
+            android:id="@+id/bg_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_call_incoming_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/shadow2"
+            />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/info_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@+id/bg_iv"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+            app:layout_constraintTop_toTopOf="@+id/bg_iv">
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bg_circle_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/gender_iv"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="13dp"
+                app:layout_constraintStart_toEndOf="@+id/avatar_iv"
+                app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+                tools:src="@drawable/ic_gender_main_normal" />
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:lines="1"
+                android:maxWidth="80dp"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/gender_iv"
+                app:layout_constraintTop_toTopOf="@+id/gender_iv"
+                tools:text="开心的土豆" />
+
+            <TextView
+                android:id="@+id/desc_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="想和你聊天..."
+                android:textColor="#ffFFEC1C"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/name_tv"
+                app:layout_constraintTop_toTopOf="@+id/name_tv" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/answer_tv"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_call_incoming_normal3"
+            android:gravity="center"
+            android:text="接听"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/info_cl"
+            app:layout_constraintStart_toStartOf="@+id/bg_iv"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+            />
+
+
+        <TextView
+            android:id="@+id/decline_tv"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_call_incoming_normal2"
+            android:gravity="center"
+            android:text="X"
+            android:textColor="#ff5f5d5f"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@+id/bg_iv"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

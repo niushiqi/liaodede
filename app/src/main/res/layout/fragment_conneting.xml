@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <data>
+
+    <variable
+        name="model"
+        type="com.dyyj.idd.chatmore.model.network.result.StartMatchingResult.Data"
+        />
+  </data>
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_constraintTop_toBottomOf="@+id/toolbar_bg_iv"
+      tools:background="@drawable/bg_main_normal"
+      >
+
+    <ImageView
+        android:id="@+id/status_iv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/ic_call_status_normal"
+        />
+
+
+    <ImageView
+        android:id="@+id/status_iv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/status_iv1"
+        app:layout_constraintTop_toTopOf="@+id/status_iv1"
+        app:layout_constraintBottom_toBottomOf="@+id/status_iv1"
+        android:src="@drawable/ic_call_status_normal3"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/status_iv2"
+        app:layout_constraintTop_toTopOf="@+id/status_iv2"
+        app:layout_constraintBottom_toBottomOf="@+id/status_iv2"
+        android:src="@drawable/ic_call_status_normal2"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/status_iv1"
+        app:layout_constraintBottom_toBottomOf="@+id/status_iv1"
+        app:layout_constraintTop_toTopOf="@+id/status_iv1"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_call_status_normal4"
+        />
+
+
+    <ImageView
+        android:id="@+id/avatar_iv"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/bg_circle_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/nickname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@{model.matchingUserNickname}"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_iv"
+        app:layout_constraintStart_toStartOf="@+id/avatar_iv"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_iv"
+        tools:text="阳光彩虹小白马"
+
+        />
+
+    <ImageView
+        android:id="@+id/gender_iv"
+        android:layout_width="11dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="6dp"
+        android:src="@{model.matchingUserGender == 1? @drawable/ic_gender_main_normal: @drawable/ic_gender_woman_normal}"
+        app:layout_constraintBottom_toBottomOf="@+id/nickname_tv"
+        app:layout_constraintStart_toEndOf="@+id/nickname_tv"
+        app:layout_constraintTop_toTopOf="@+id/nickname_tv"
+        tools:src="@drawable/ic_gender_main_normal"
+        />
+
+    <LinearLayout
+        android:id="@+id/flag_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/nickname_tv"
+        app:layout_constraintStart_toStartOf="@+id/nickname_tv"
+        app:layout_constraintTop_toBottomOf="@+id/nickname_tv"
+        >
+      <TextView
+          android:id="@+id/level_tv"
+          android:layout_width="22dp"
+          android:layout_height="20dp"
+          android:background="@drawable/ic_level_normal2"
+          android:gravity="center"
+          android:text="1"
+          android:textColor="#ffbb3b53"
+          android:textSize="10sp"
+          />
+
+      <ImageView
+          android:id="@+id/vip_iv"
+          android:layout_width="33dp"
+          android:layout_height="18dp"
+          android:layout_marginStart="5dp"
+          android:scaleType="centerInside"
+          android:src="@drawable/ic_vip_normal"
+          />
+    </LinearLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/hang_up_ll"
+        android:layout_width="205dp"
+        android:layout_height="49dp"
+        android:text="取消呼叫"
+        android:textColor="#ff884d00"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rect_rounded_left_right_arc"
+        />
+
+
+
+    <TextView
+        android:id="@+id/desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/hang_up_ll"
+        app:layout_constraintStart_toStartOf="@+id/hang_up_ll"
+        app:layout_constraintEnd_toEndOf="@+id/hang_up_ll"
+        android:layout_marginBottom="85dp"
+        tools:text="呼叫中..."
+        android:textColor="#ffffffff"
+        android:textSize="14sp"
+        />
+  </android.support.constraint.ConstraintLayout>
+</layout>

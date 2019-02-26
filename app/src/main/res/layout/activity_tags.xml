@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <include
+            layout="@layout/layout_toolbar1"
+            android:id="@+id/layout_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="2dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_dialog_tip_pressed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toolbar"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="贴个标签，做最独特的自己（至少选3个标签）"
+            android:textColor="#A5762A"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView22"
+            app:layout_constraintStart_toEndOf="@+id/imageView22"
+            app:layout_constraintTop_toTopOf="@+id/imageView22"/>
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/commit_btn"
+            android:layout_width="245dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rect_rounded_left_right_arc"
+            android:text="提交"
+            android:textColor="#ff884d00"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/afl_cotent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="25dp"
+            app:alignContent="stretch"
+            app:alignItems="stretch"
+            app:flexWrap="wrap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"/>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

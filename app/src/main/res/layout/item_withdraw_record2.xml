@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="28dp"
+        android:padding="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_alipay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alipay2"
+            />
+
+        <TextView
+            android:id="@+id/tv_alipay_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付宝账号 1221212211"
+            android:layout_toRightOf="@+id/iv_alipay"
+            android:layout_marginLeft="@dimen/item_decoration_15dp"
+            android:textColor="#909090"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00"
+            android:layout_alignParentRight="true"
+            android:textColor="#909090"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_withdraw_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现金额：1元"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="@dimen/item_decoration_15dp"
+            android:textColor="#2F2E2E"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tv_withdraw_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现中"
+            android:layout_alignParentRight="true"
+            android:textColor="#909090"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

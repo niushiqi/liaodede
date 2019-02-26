@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.dyyj.idd.chatmore.model.network.result.MainResult.Data"
+            />
+
+        <variable
+            name="model2"
+            type="com.dyyj.idd.chatmore.model.network.result.RedPackageResult.RedPackageEntry"
+            />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_bobo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="radar.json"
+            app:lottie_loop="true"
+            tools:background="@color/accent"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/start_chat_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="38dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/chat_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <include
+                    layout="@layout/layout_start_voice_chat"
+                    android:layout_width="196dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/rl_start_voice_chat"/>
+
+                <include
+                    layout="@layout/layout_start_text_chat"
+                    android:layout_width="196dp"
+                    android:layout_height="56dp"
+                    android:layout_below="@id/rl_start_voice_chat"
+                    android:layout_marginTop="22dp"
+                    android:id="@+id/rl_start_text_chat"/>
+
+                <ImageView
+                    android:id="@+id/iv_gold_circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_take_money_bg"
+                    android:visibility="invisible"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_gold_circle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_take_money_bg"
+                    android:visibility="invisible"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_gold_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="57dp"
+                android:background="@drawable/ic_gold_num_bg"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/chat_ll"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="累计"
+                        android:textColor="#AC5B25"
+                        android:textSize="11sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_gold"
+                        android:layout_width="9dp"
+                        android:layout_height="11dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/icon_gold"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_gold_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="60枚"
+                        android:textColor="#AC5B25"
+                        android:textSize="11sp"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_bottom"
+            />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="414dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_1"
+            tools:ignore="MissingConstraints"
+            />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="123dp"
+            android:layout_marginBottom="170dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_2"
+            tools:ignore="MissingConstraints"
+            />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="147dp"
+            android:layout_marginBottom="213dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_3"
+            />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginBottom="140dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_6"
+            />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="37dp"
+            android:layout_marginBottom="263dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_7"
+            />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="389dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_8"
+            />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="66dp"
+            android:layout_marginBottom="283dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_9"
+            />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="76dp"
+            android:layout_marginBottom="292dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_10"
+            />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="104dp"
+            android:layout_marginBottom="232dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_11"
+            />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="96dp"
+            android:layout_marginBottom="364dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_13"
+            />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="136dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_4"
+            tools:ignore="MissingConstraints"
+            />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="148dp"
+            android:layout_marginBottom="316dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_first_5"
+            />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="111dp"
+            android:layout_marginBottom="343dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_first_12"
+            />
+
+        <ImageView
+            android:id="@+id/bottom_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_arc_line"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/start_chat_rl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <RelativeLayout
+            android:id="@+id/bottom_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/start_chat_rl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/iv_dark_left"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="-50dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_hulu_dark"
+                />
+
+            <ImageView
+                android:id="@+id/iv_dark_right"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="-50dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_yingmu_dark"
+                />
+        </RelativeLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/txt_message_top"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/top_message_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_bg_top_message">
+
+                <TextView
+                    android:id="@+id/txt_top_message_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="我的消息"
+                    android:textColor="#6A6785"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@id/txt_top_message_back"
+                    android:src="@drawable/ic_load_more"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/top_message_fore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F30950"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_top_message_fore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="你有 5 条新消息"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@id/txt_top_message_fore"
+                    android:src="@drawable/ic_load_more_white"/>
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/start_chat_rl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/red_packet_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/start_chat_rl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/bg_read_packet_iv1"
+                android:layout_width="125dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="35dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bg_read_packet_normal1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/red_packet_success_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="红包成熟咯！可以开启啦！"
+                android:textColor="#ffffffff"
+                android:textSize="15sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@+id/bg_read_packet_iv1"
+                app:layout_constraintEnd_toEndOf="@+id/bg_read_packet_iv1"
+                app:layout_constraintStart_toStartOf="@+id/bg_read_packet_iv1"
+                tools:visibility="gone"
+                />
+
+            <ImageView
+                android:id="@+id/bg_read_packet_iv2"
+                android:layout_width="145dp"
+                android:layout_height="185dp"
+                android:layout_marginTop="7dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bg_read_packet_normal2"
+                app:layout_constraintEnd_toEndOf="@+id/bg_read_packet_iv1"
+                app:layout_constraintStart_toStartOf="@+id/bg_read_packet_iv1"
+                app:layout_constraintTop_toTopOf="@+id/bg_read_packet_iv1"
+                />
+
+            <ImageView
+                android:id="@+id/bg_read_packet_iv3"
+                android:layout_width="164dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="7dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bg_read_packet_normal3"
+                app:layout_constraintEnd_toEndOf="@+id/bg_read_packet_iv2"
+                app:layout_constraintStart_toStartOf="@+id/bg_read_packet_iv2"
+                app:layout_constraintTop_toTopOf="@+id/bg_read_packet_iv2"
+                />
+
+            <TextView
+                android:id="@+id/read_packet_content_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/ic_read_packet_normal4"
+                android:gravity="center"
+                android:text="01:50"
+                android:textColor="#ffb2550c"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/bg_read_packet_iv3"
+                app:layout_constraintStart_toStartOf="@+id/bg_read_packet_iv3"
+                app:layout_constraintTop_toTopOf="@+id/bg_read_packet_iv3"
+                />
+
+            <TextView
+                android:id="@+id/red_packet_share_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="62dp"
+                android:background="@drawable/bg_red_packet_normal11"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:text="分享成功\n点击连开3个红包"
+                android:textColor="#ff975d04"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/read_packet_content_tv"
+                app:layout_constraintEnd_toEndOf="@+id/read_packet_content_tv"
+                app:layout_constraintStart_toStartOf="@+id/read_packet_content_tv"
+                tools:visibility="visible"
+                />
+
+            <LinearLayout
+                android:id="@+id/read_packet_desc_ll"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="124dp"
+                android:background="@drawable/bg_read_packet_nromal5"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/bg_read_packet_iv3"
+                app:layout_constraintTop_toTopOf="@+id/bg_read_packet_iv3"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="共领取了"
+                    android:textColor="#ffffffff"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{model2.openedNum+" 个红包"}'
+                    android:textColor="#ffffec1c"
+                    android:textSize="20sp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="5dp"
+                android:text='@{"超越"+(model2.overPersonNum)+"%的用户"}'
+                android:textColor="#fffeffff"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/read_packet_desc_ll"
+                app:layout_constraintTop_toBottomOf="@+id/read_packet_desc_ll"
+                />
+        </android.support.constraint.ConstraintLayout>
+
+        <!--<android.support.constraint.ConstraintLayout-->
+        <!--android:id="@+id/user_cl"-->
+        <!--android:layout_width="350dp"-->
+        <!--android:layout_height="65dp"-->
+        <!--android:background="@drawable/bg_user_normal1"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--&gt;-->
+
+
+        <!--<ImageView-->
+        <!--android:id="@+id/avatar_iv"-->
+        <!--android:layout_width="34dp"-->
+        <!--android:layout_height="34dp"-->
+        <!--android:layout_marginStart="14dp"-->
+        <!--android:src="@drawable/bg_circle_black"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--tools:src="@drawable/bg_circle_black"-->
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/nickname_tv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:text="@{model.userBaseInfo.nickname}"-->
+        <!--android:textColor="#ffffffff"-->
+        <!--android:textSize="10sp"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/gender_iv"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/gender_iv"-->
+        <!--tools:text="阳光彩虹小白马"-->
+        <!--/>-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/gender_iv"-->
+        <!--android:layout_width="9dp"-->
+        <!--android:layout_height="11dp"-->
+        <!--android:layout_marginStart="11dp"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:src="@{model.userBaseInfo.gender == 1? @drawable/ic_gender_main_normal: @drawable/ic_gender_woman_normal}"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/avatar_iv"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/avatar_iv"-->
+        <!--app:layout_goneMarginStart="4dp"-->
+        <!--app:layout_goneMarginTop="3dp"-->
+        <!--tools:src="@drawable/ic_gender_main_normal"-->
+        <!--/>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/flag_ll"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/nickname_tv"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/nickname_tv"-->
+        <!--&gt;-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/vip_iv"-->
+        <!--android:layout_width="26dp"-->
+        <!--android:layout_height="14dp"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:src="@drawable/ic_vip_normal"-->
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/level_tv"-->
+        <!--android:layout_width="17dp"-->
+        <!--android:layout_height="15dp"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:background="@drawable/ic_level_normal2"-->
+        <!--android:gravity="center"-->
+        <!--android:text="1"-->
+        <!--android:textColor="#ffbb3b53"-->
+        <!--android:textSize="9sp"-->
+        <!--/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/wallet_ll"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="13dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingTop="20dp"-->
+        <!--android:paddingBottom="20dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/nickname_tv"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/nickname_tv"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/nickname_tv"-->
+        <!--&gt;-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/cash_ll"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/bg_user_normal2"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--&gt;-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:src="@drawable/ic_user_xianjing_normal"-->
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="6dp"-->
+        <!--android:text="@{model.userWallet.userCash}"-->
+        <!--android:textColor="#ffffec1c"-->
+        <!--android:textSize="9sp"-->
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="3dp"-->
+        <!--android:text="元"-->
+        <!--android:textColor="#ffffec1c"-->
+        <!--android:textSize="5sp"-->
+        <!--/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+        <!--android:id="@+id/coin_ll"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:background="@drawable/bg_user_normal2"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--&gt;-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:src="@drawable/ic_user_jinbi_normal"-->
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="6dp"-->
+        <!--android:text="@{model.userWallet.userCoin}"-->
+        <!--android:textColor="#ffffe754"-->
+        <!--android:textSize="9sp"-->
+        <!--/>-->
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+        <!--android:id="@+id/stone_ll"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:background="@drawable/bg_user_normal2"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--&gt;-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:src="@drawable/ic_user_moshi_normal"-->
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="6dp"-->
+        <!--android:text="@{model.userWallet.userStone}"-->
+        <!--android:textColor="#ffffe754"-->
+        <!--android:textSize="9sp"-->
+        <!--/>-->
+
+        <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/wallet_tv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="19dp"-->
+        <!--android:drawableEnd="@drawable/ic_user_right_normal"-->
+        <!--android:drawablePadding="7dp"-->
+        <!--android:text="进入钱包"-->
+        <!--android:textColor="#ffffec1c"-->
+        <!--android:textSize="10sp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/avatar_iv"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/avatar_iv"-->
+        <!--/>-->
+
+        <!--<View-->
+        <!--android:id="@+id/view_wallet"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintTop_toTopOf="@id/wallet_ll"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="@id/wallet_ll"/>-->
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/get_red_packet_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="28dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/xiaoxi_rl"
+            >
+
+            <ImageView
+                android:id="@+id/bg_red_packet_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bg_red_packet_normal6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <com.github.lzyzsd.circleprogress.DonutProgress
+                android:id="@+id/progress_bar_ccpb"
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                app:donut_background_color="@color/translucent_background"
+                app:donut_circle_starting_degree="270"
+                app:donut_finished_color="@android:color/holo_red_dark"
+                app:donut_finished_stroke_width="3dp"
+                app:donut_max="100"
+                app:donut_progress="80"
+                app:donut_show_text="false"
+                app:donut_unfinished_color="@color/translucent_background"
+                app:donut_unfinished_stroke_width="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/ic_red_packet_iv"
+                android:layout_width="24dp"
+                android:layout_height="29dp"
+                android:src="@drawable/ic_read_packet_nromal7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/get_red_packet_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="可领取"
+                android:textColor="#ffffff"
+                android:textSize="8sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_red_packet_iv"
+                tools:visibility="visible"
+                />
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_take_money"
+            android:layout_width="47dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/ic_invite_take_money"
+            app:layout_constraintEnd_toEndOf="@id/get_red_packet_cl"
+            app:layout_constraintStart_toStartOf="@id/get_red_packet_cl"
+            app:layout_constraintTop_toBottomOf="@id/get_red_packet_cl"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_red_packet_normal9"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:text="欢迎回来，你有3名好友今日上线过"
+                android:textColor="#ffffffff"
+                android:textSize="10sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_red_packet_normal10"
+                android:gravity="center"
+                android:text="快去聊聊吧"
+                android:textColor="#ffa1510a"
+                android:textSize="10sp"
+                />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/cl_wrap"
+            android:layout_width="0dp"
+            android:layout_height="565dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/iv_moshi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_gift_moshi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="7dp"
+                    android:text="+ 20"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tip_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/start_chat_rl"
+            >
+
+            <ImageView
+                android:id="@+id/moshi_iv"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="+金币 10枚"
+            android:textColor="#FFEC1C"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/start_chat_rl"
+            app:layout_constraintEnd_toEndOf="@id/start_chat_rl"
+            />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/renwu_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_bg_half_tran"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_message_top">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_renwu_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_btn_renwu"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/iv_renwu_title">
+
+                    <TextView
+                        android:id="@+id/tv_task_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        tools:text="跑3个陌生聊天框"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_task_status"
+                        android:layout_width="45dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/shape_task_success_status"
+                        android:gravity="center"
+                        android:text="去完成"
+                        android:textColor="#884D00"
+                        android:textSize="10sp"
+                        android:visibility="gone"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="7dp"
+                    android:layout_toRightOf="@id/iv_renwu_title"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    <TextView
+                        android:id="@+id/txt_renwu_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="跟3个陌生人聊天超过3分钟 \n奖励： 40金币/每次"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/rect_round_solid_yellow"
+                        android:gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="6dp"
+                        android:text="去完成"
+                        android:textColor="#884D00"
+                        android:textSize="10sp"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <!--<android.support.constraint.ConstraintLayout-->
+        <!--android:id="@+id/xiaoxi_cl"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="34dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/renwu_cl">-->
+
+        <RelativeLayout
+            android:id="@+id/xiaoxi_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/shape_bg_message"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/renwu_cl">
+
+            <TextView
+                android:id="@+id/txt_title_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="通知：银行有新收益"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/txt_lingqu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/txt_title_tip"
+                android:background="@drawable/rect_round_solid_yellow"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="领取"
+                android:textColor="#A1510A"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+
+        <!--<ImageView-->
+        <!--android:layout_width="82dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/ic_bg_half_yellow"/>-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/img_chat_tip"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:src="@drawable/ic_chat_tip_shouye"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="4dp"-->
+        <!--android:text="好友消息"-->
+        <!--android:textColor="#B2550C"-->
+        <!--android:textSize="11sp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@id/img_chat_tip"-->
+        <!--app:layout_constraintTop_toTopOf="parent"/>-->
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/txt_un_hot"-->
+        <!--android:layout_width="22dp"-->
+        <!--android:layout_height="22dp"-->
+        <!--android:layout_marginBottom="21dp"-->
+        <!--android:layout_marginLeft="65dp"-->
+        <!--android:background="@drawable/shape_red_tip"-->
+        <!--android:gravity="center"-->
+        <!--android:text="99"-->
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:textSize="11sp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/xiaoxi_cl"-->
+        <!--app:layout_constraintStart_toStartOf="@id/xiaoxi_cl"/>-->
+
+        <com.flyco.tablayout.widget.MsgView
+            android:id="@+id/txt_un_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginBottom="21dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/xiaoxi_rl"
+            app:layout_constraintStart_toStartOf="@id/xiaoxi_rl"
+            app:mv_backgroundColor="#FD481F"
+            app:mv_isRadiusHalfHeight="true"
+            app:mv_strokeWidth="2dp"
+            />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,267 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+ext.deps = [:]
+def versions = [:]
+versions.arch_core = "1.1.0"
+versions.room = "1.1.0-alpha1"
+versions.lifecycle = "1.1.0"
+versions.support = "27.1.1"
+versions.dagger = "2.11"
+versions.junit = "4.12"
+versions.espresso = "3.0.1"
+versions.retrofit = "2.3.0"
+versions.okhttp_logging_interceptor = "3.9.0"
+versions.mockwebserver = "3.8.1"
+versions.apache_commons = "2.5"
+versions.mockito = "2.7.19"
+versions.mockito_all = "1.10.19"
+versions.dexmaker = "2.2.0"
+versions.constraint_layout = "1.1.2"
+versions.glide = "3.8.0"
+versions.timber = "4.5.1"
+versions.android_gradle_plugin = "3.0.1"
+versions.atsl_runner = "1.0.1"
+versions.atsl_rules = "1.0.1"
+versions.hamcrest = "1.3"
+versions.kotlin = "1.2.50"
+versions.paging = "1.0.0-alpha5"
+versions.swipebacklayout = "1.1.8"
+versions.databinding = "3.0.1"
+versions.chatkit = "0.2.2"
+versions.permissionsdispatcher = "3.1.0"
+versions.dependencies = "0.9.6.0"
+versions.weex = "0.0.2.7"
+versions.weex_sdk = "0.8.0"
+versions.findbugs = "2.0.1"
+versions.fastjson = "1.1.45"
+versions.okhttp = "3.4.2"
+versions.okhttp_ws = "3.4.2"
+versions.photoview = "2.1.2"
+versions.circleindicator = "1.2.2"
+versions.matisse = "0.5.0-beta3"
+versions.flexibledivider = "1.4.0"
+versions.glide_transformations = "2.0.2"
+versions.tablayout = "2.1.2"
+versions.shadow_layout = "1.0.3"
+versions.banner = "1.4.9"
+versions.okhttp = "3.10.0"
+versions.retrofit2 = "2.3.0"
+versions.converter_gson = "2.3.0"
+versions.converter_scalars = "2.3.0"
+versions.adapter_rxjava2 = "2.3.0"
+versions.rxjava2 = "2.1.1"
+versions.rxandroid = "2.0.1"
+versions.logging_interceptor = "3.9.0"
+versions.multidex = "1.0.3"
+versions.eventbus = "3.1.1"
+versions.Luban = "1.1.8"
+versions.rongcloud = "2.8.6"
+versions.tinypinyin = "2.0.3"
+versions.suspension_index_bar = "V1.0.0"
+versions.gretaVersion = "1.1.0"
+versions.stetho = "1.5.0"
+versions.shapeLoadingView = "1.0.3.2"
+versions.okhttp_utils = "3.8.0"
+versions.channel = "1.1.7"
+versions.greenrobot = "3.2.2"
+versions.pugnotification = "1.8.1"
+versions.umeng_common = "1.5.0"
+versions.umeng_analytics = "7.5.0"
+versions.leakcanary = "1.5.4"
+
+def deps = [:]
+
+def gtcp = [:]
+gtcp.code = 109
+gtcp.name = "1.0.9"
+deps.gtcp = gtcp
+
+def support = [:]
+support.annotations = "com.android.support:support-annotations:$versions.support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+support.cardview = "com.android.support:cardview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
+support.core_utils = "com.android.support:support-core-utils:$versions.support"
+support.grid_layout = "com.android.support:gridlayout-v7:$versions.support"
+support.palette_v7 = "com.android.support:palette-v7:$versions.support"
+deps.support = support
+
+def room = [:]
+room.runtime = "android.arch.persistence.room:runtime:$versions.room"
+room.compiler = "android.arch.persistence.room:compiler:$versions.room"
+room.rxjava2 = "android.arch.persistence.room:rxjava2:$versions.room"
+room.testing = "android.arch.persistence.room:testing:$versions.room"
+deps.room = room
+
+def lifecycle = [:]
+lifecycle.runtime = "android.arch.lifecycle:runtime:$versions.lifecycle"
+lifecycle.extensions = "android.arch.lifecycle:extensions:$versions.lifecycle"
+lifecycle.java8 = "android.arch.lifecycle:common-java8:$versions.lifecycle"
+lifecycle.compiler = "android.arch.lifecycle:compiler:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def arch_core = [:]
+arch_core.testing = "android.arch.core:core-testing:$versions.arch_core"
+deps.arch_core = arch_core
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+deps.retrofit = retrofit
+deps.okhttp_logging_interceptor =
+    "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_logging_interceptor}"
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+deps.dagger = dagger
+
+def espresso = [:]
+espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+deps.espresso = espresso
+
+def atsl = [:]
+atsl.runner = "com.android.support.test:runner:$versions.atsl_runner"
+atsl.rules = "com.android.support.test:rules:$versions.atsl_runner"
+deps.atsl = atsl
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+deps.mockito = mockito
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$versions.kotlin"
+deps.kotlin = kotlin
+
+def rx = [:]
+rx.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
+rx.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rx = rx
+
+def squareup = [:]
+squareup.okhttp = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+squareup.okhttp_ws = "com.squareup.okhttp3:okhttp-ws:$versions.okhttp_ws"
+squareup.retrofit2 = "com.squareup.retrofit2:retrofit:$versions.retrofit2"
+squareup.converter_gson = "com.squareup.retrofit2:converter-gson:$versions.converter_gson"
+squareup.converter_scalars = "com.squareup.retrofit2:converter-scalars:$versions.converter_scalars"
+squareup.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$versions.adapter_rxjava2"
+squareup.logging_interceptor =
+    "com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor"
+squareup.leakcanary = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+squareup.leakcanary_no_op = "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary"
+deps.squareup = squareup
+
+def rongcloud = [:]
+rongcloud.IMLib = "cn.rongcloud.android:IMLib:$versions.rongcloud"
+rongcloud.IMKit = "cn.rongcloud.android:IMKit:$versions.rongcloud"
+deps.rongcloud = rongcloud
+
+def tinypinyin = [:]
+tinypinyin.core = "com.github.promeg:tinypinyin:$versions.tinypinyin"
+tinypinyin.android = "com.github.promeg:tinypinyin-lexicons-android-cncity:$versions.tinypinyin"
+deps.tinypinyin = tinypinyin
+
+def great_tao = [:]
+great_tao.hybrid = "com.gt.common:hybrid:${versions.gretaVersion}"
+great_tao.update_app = "com.gt.common:update-app:${versions.gretaVersion}"
+great_tao.update_app_kotlin = "com.gt.common:update-app-kotlin:${versions.gretaVersion}"
+deps.great_tao = great_tao
+
+def stetho = [:]
+stetho.core = "com.facebook.stetho:stetho:$versions.stetho"
+stetho.okhttp3 = "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+stetho.js = "com.facebook.stetho:stetho-js-rhino:$versions.stetho"
+deps.stetho = stetho
+
+def channel = [:]
+channel.plugin = "com.leon.channel:plugin:${versions.channel}"
+channel.helper = "com.leon.channel:helper:${versions.channel}"
+deps.channel = channel
+
+def greenrobot = [:]
+greenrobot.plugin = "org.greenrobot:greendao-gradle-plugin:${versions.greenrobot}"
+greenrobot.greendao = "org.greenrobot:greendao:${versions.greenrobot}"
+deps.greenrobot = greenrobot
+
+
+def huawei = [:]
+huawei.push = "com.huawei.android.hms:push:2.5.3.305"
+deps.huawei = huawei
+
+deps.paging = "android.arch.paging:runtime:$versions.paging"
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
+deps.constraint_layout =
+    "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+deps.junit = "junit:junit:$versions.junit"
+deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
+deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.swipebacklayout = "cn.bingoogolapple:bga-swipebacklayout:${versions.swipebacklayout}"
+deps.databinding = "com.android.databinding:compiler:$versions.databinding"
+deps.chatkit = "com.github.stfalcon:chatkit:$versions.chatkit"
+deps.permissionsdispatcher_processor =
+    "com.github.hotchemi:permissionsdispatcher-processor:${versions.permissionsdispatcher}"
+deps.permissionsdispatcher =
+    "com.github.hotchemi:permissionsdispatcher:${versions.permissionsdispatcher}"
+deps.dependencies = "com.afollestad.material-dialogs:core:$versions.dependencies"
+deps.weex = "com.taobao.android:weex_inspector:${versions.weex}"
+deps.weex_sdk = "com.taobao.android:weex_sdk:${versions.weex_sdk}"
+deps.findbugs = "com.google.code.findbugs:jsr305:${versions.findbugs}"
+deps.fastjson = "com.alibaba:fastjson:${versions.fastjson}"
+deps.photoview = "com.github.chrisbanes:PhotoView:${versions.photoview}"
+deps.circleindicator = "me.relex:circleindicator:$versions.circleindicator"
+deps.matisse = "com.zhihu.android:matisse:$versions.matisse"
+deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexibledivider"
+deps.glide_transformations = "jp.wasabeef:glide-transformations:$versions.glide_transformations"
+deps.tablayout = "com.flyco.tablayout:FlycoTabLayout_Lib:$versions.tablayout"
+deps.shadow_layout = "com.github.dmytrodanylyk.shadow-layout:library:$versions.shadow_layout"
+deps.banner = "com.youth.banner:banner:$versions.banner"
+deps.gson = "com.google.code.gson:gson:2.8.0"
+deps.multidex = "com.android.support:multidex:$versions.multidex"
+deps.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
+deps.Luban = "top.zibin:Luban:$versions.Luban"
+deps.suspension_index_bar = "com.github.mcxtzhang:SuspensionIndexBar:$versions.suspension_index_bar"
+deps.shapeLoadingView = "com.github.zzz40500:android-shapeLoadingView:$versions.shapeLoadingView"
+deps.okhttp_utils = "com.qianwen:okhttp-utils:${versions.okhttp_utils}"
+deps.pugnotification = "com.github.halysongoncalves:pugnotification:$versions.pugnotification"
+deps.umeng_common = "com.umeng.sdk:common:$versions.umeng_common"
+deps.umeng_analytics = "com.umeng.sdk:analytics:$versions.umeng_analytics"
+
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.min_sdk = 17
+build_versions.target_sdk = 27
+build_versions.build_tools = "28.0.1"
+ext.build_versions = build_versions
+
+def addRepos(RepositoryHandler handler) {
+
+  handler.google()
+  handler.jcenter()
+  handler.mavenCentral()
+  handler.maven { url "https://jitpack.io" }
+  /*handler.maven {url 'http://developer.huawei.com/repo/'}
+  handler.maven {url "https://repo.eclipse.org/content/repositories/paho-releases/"}
+  handler.maven { url "https://raw.githubusercontent.com/HyphenateInc/Hyphenate-SDK-Android/master/repository" }
+  handler.maven {url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"}*/
+}
+
+ext.addRepos = this.&addRepos

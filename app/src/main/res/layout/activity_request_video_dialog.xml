@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/item_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/bg_iv"
+            android:layout_width="335dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="92dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_call_incoming_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:maxWidth="80dp"
+            tools:text="开心的土豆"
+            android:textColor="#ffffec1c"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/bg_iv"
+            app:layout_constraintTop_toTopOf="@+id/bg_iv"
+            />
+
+        <TextView
+            android:id="@+id/desc_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="请求"
+            android:textColor="#ffffec1c"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/name_tv"
+            />
+
+        <ImageView
+            android:id="@+id/desc_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_call_incoming_normal"
+            app:layout_constraintBottom_toBottomOf="@+id/desc_tv1"
+            app:layout_constraintStart_toEndOf="@+id/desc_tv1"
+            app:layout_constraintTop_toTopOf="@+id/desc_tv1"
+            />
+
+        <TextView
+            android:id="@+id/desc_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="聊天"
+            android:textColor="#ffffec1c"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/desc_iv"
+            app:layout_constraintStart_toEndOf="@+id/desc_iv"
+            app:layout_constraintTop_toTopOf="@+id/desc_iv"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_iv"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+            app:layout_constraintTop_toTopOf="@+id/bg_iv"
+            >
+            <TextView
+                android:id="@+id/decline_tv"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_call_incoming_normal2"
+                android:gravity="center"
+                android:text="拒绝"
+                android:textColor="#fff1bc1f"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/answer_tv"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_call_incoming_normal3"
+                android:gravity="center"
+                android:layout_marginStart="13dp"
+                android:text="接收"
+                android:textColor="#ff7b0727"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_magic_power"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+          android:id="@+id/img_magic_power"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:src="@drawable/ic_game_tools_moshi_normal"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_magic"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:paddingEnd="10dp"
+          android:paddingStart="5dp"
+          android:text="当前魔石"
+          android:textSize="12dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toEndOf="@+id/img_magic_power"
+          app:layout_constraintTop_toTopOf="@+id/img_magic_power" />
+
+      <TextView
+          android:id="@+id/tv_magic_num"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="4dp"
+          android:text="999"
+          android:textColor="#573579"
+          android:textSize="30dp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="@+id/tv_magic"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="@+id/tv_magic"
+          app:layout_constraintTop_toBottomOf="@+id/tv_magic" />
+
+      <TextView
+          android:id="@+id/tv_buy_magic_btn"
+          android:layout_width="100dp"
+          android:layout_height="37dp"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="30dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:background="@drawable/rect_rounded_left_right_arc5"
+          android:gravity="center"
+          android:text="购买魔石"
+          android:textColor="#744F00"
+          android:textSize="13dp"
+          app:layout_constraintBottom_toTopOf="@+id/tv_magic_desc"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.984"
+          app:layout_constraintStart_toEndOf="@+id/img_magic_power"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_magic_desc"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/shape_bottom_radius_light_purple"
+          android:paddingBottom="8dp"
+          android:paddingEnd="20dp"
+          android:paddingStart="20dp"
+          android:paddingTop="8dp"
+          android:text="开启聊天、随缘匹配、广场私聊都需要魔石"
+          android:textColor="#969591"
+          android:textSize="9dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/img_magic_power"
+          app:layout_constraintVertical_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_peas_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl1"
+        app:layout_constraintVertical_bias="0.022">
+
+      <ImageView
+          android:id="@+id/img_magic"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:src="@drawable/ic_flicker_peas"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_pea"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:paddingEnd="10dp"
+          android:paddingStart="5dp"
+          android:text="当前得得豆"
+          android:textSize="12dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toEndOf="@+id/img_magic"
+          app:layout_constraintTop_toTopOf="@+id/img_magic" />
+
+      <TextView
+          android:id="@+id/tv_pea_num"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="4dp"
+          android:text="999"
+          android:textColor="#744F00"
+          android:textSize="30dp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="@+id/tv_pea"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="@+id/tv_pea"
+          app:layout_constraintTop_toBottomOf="@+id/tv_pea" />
+
+      <TextView
+          android:id="@+id/tv_buy_pea_btn"
+          android:layout_width="100dp"
+          android:layout_height="37dp"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="30dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:background="@drawable/rect_rounded_left_right_arc5"
+          android:gravity="center"
+          android:text="购买得得豆"
+          android:textColor="#744F00"
+          android:textSize="13dp"
+          app:layout_constraintBottom_toTopOf="@+id/tv_pea_desc"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.984"
+          app:layout_constraintStart_toEndOf="@+id/img_magic"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_pea_desc"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/shape_bottom_radius_light_yellow"
+          android:paddingBottom="8dp"
+          android:paddingEnd="20dp"
+          android:paddingStart="20dp"
+          android:paddingTop="8dp"
+          android:text="得得豆可用来买礼物，送给喜欢的人"
+          android:textColor="#969591"
+          android:textSize="9dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/img_magic"
+          app:layout_constraintVertical_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_matching_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl2"
+        app:layout_constraintVertical_bias="0.056">
+
+      <ImageView
+          android:id="@+id/img_card"
+          android:layout_width="wrap_content"
+          android:layout_height="70dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:src="@drawable/ic_flicker_matching_card"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_card"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:paddingEnd="5dp"
+          android:paddingStart="5dp"
+          android:text="拥有匹配卡"
+          android:textColor="#2998AC"
+          android:textSize="12dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toEndOf="@+id/img_card"
+          app:layout_constraintTop_toTopOf="@+id/img_card" />
+
+      <TextView
+          android:id="@+id/tv_card_num"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="4dp"
+          android:text="999张"
+          android:textColor="#157A8C"
+          android:textSize="30dp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="@+id/tv_card"
+          app:layout_constraintHorizontal_bias="0.2"
+          app:layout_constraintStart_toStartOf="@+id/tv_card"
+          app:layout_constraintTop_toBottomOf="@+id/tv_card" />
+
+      <TextView
+          android:id="@+id/tv_buy_card_btn"
+          android:layout_width="100dp"
+          android:layout_height="37dp"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="30dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="28dp"
+          android:background="@drawable/rect_rounded_left_right_arc5"
+          android:gravity="center"
+          android:text="购买匹配卡"
+          android:textColor="#744F00"
+          android:textSize="13dp"
+          app:layout_constraintBottom_toTopOf="@+id/tv_matching_card_desc"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="1.0"
+          app:layout_constraintStart_toEndOf="@+id/img_card"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.0" />
+
+      <TextView
+          android:id="@+id/tv_matching_card_desc"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/shape_bottom_radius_light_blue"
+          android:paddingBottom="8dp"
+          android:paddingEnd="20dp"
+          android:paddingStart="20dp"
+          android:paddingTop="8dp"
+          android:text="购买匹配卡，每天增加随缘匹配机会"
+          android:textColor="#969591"
+          android:textSize="9dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/img_card"
+          app:layout_constraintVertical_bias="1.0" />
+
+      <TextView
+          android:id="@+id/look_card"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:text="查看匹配卡"
+          android:textColor="#157A8C"
+          android:textSize="12dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.971"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_matching_card_desc" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+  </android.support.constraint.ConstraintLayout>
+</layout>

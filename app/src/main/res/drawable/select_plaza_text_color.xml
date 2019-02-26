@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 矩形圆角+左右两边为一个圆弧 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:color="#A36451" android:state_pressed="true" />
+    <item android:color="#A36451" android:state_selected="true" />
+    <item android:color="#A48A83" />
+
+</selector>

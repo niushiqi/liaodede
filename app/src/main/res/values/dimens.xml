@@ -1,0 +1,21 @@
+<resources>
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+  <dimen name="nav_header_vertical_spacing">8dp</dimen>
+  <dimen name="nav_header_height">176dp</dimen>
+  <dimen name="fab_margin">16dp</dimen>
+  <dimen name="grid_expected_size">120dp</dimen>
+  <dimen name="item_decoration">1px</dimen>
+  <dimen name="leftmargin">8dp</dimen>
+  <dimen name="rightmargin">8dp</dimen>
+  <dimen name="item_home_decoration">10dp</dimen>
+  <dimen name="item_home_decoration_1dp">1dp</dimen>
+  <dimen name="item_home_decoration_15">15dp</dimen>
+  <dimen name="item_decoration_2px">2px</dimen>
+  <dimen name="item_decoration_10dp">10dp</dimen>
+  <dimen name="item_decoration_15dp">15dp</dimen>
+  <dimen name="item_decoration_20dp">20dp</dimen>
+  <item name="tab_item_left_padding" format="float" type="dimen">-23</item>
+  <item name="tab_item_bottom_padding" format="float" type="dimen">3</item>
+</resources>

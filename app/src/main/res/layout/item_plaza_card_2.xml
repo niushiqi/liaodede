@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="obj"
+            type="com.dyyj.idd.chatmore.model.network.result.PlazaCardResult.PlazaTopic" />
+
+        <variable
+            name="ViewHolder"
+            type="com.dyyj.idd.chatmore.ui.adapter.PlazaFlowCardAdapter.ViewHolder" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:onClick="@{(view)->ViewHolder.onComments(view , obj)}">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{(view)->ViewHolder.onAvatar(view , obj)}"
+            android:src="@drawable/ic_default_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:textColor="#3E3E3E"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar"
+            tools:text="包小宝" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/ic_bg_level"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:textColor="#BB3B53"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/textView21"
+            app:layout_constraintTop_toTopOf="@+id/textView21"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/textView64"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/plaza_card_text_1"
+            android:textColor="#999999"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar" />
+
+
+
+        <!--暂时弃用-->
+        <TextView
+            android:id="@+id/tv_posted"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:onClick="@{(view)->ViewHolder.onPosted(view , obj)}"
+            android:text="@string/plaza_card_btn_post"
+            android:textColor="#696969"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_plaza_posted"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_posted"
+            app:layout_constraintStart_toStartOf="@+id/tv_posted"
+            app:layout_constraintTop_toTopOf="@id/tv_posted"
+            app:tint="#696969" />
+
+
+        <ImageView
+            android:id="@+id/iv_jing"
+            android:layout_width="16dp"
+            android:layout_height="19dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/icon_plaza_jing"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView63" />
+
+
+        <TextView
+            android:id="@+id/textView65"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="13dp"
+            android:ellipsize="end"
+            android:maxLines="7"
+            android:textColor="#313840"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+            tools:text="#某某话题我刚来到聊得得，向你问声好，请多多关照！" />
+
+        <TextView
+            android:id="@+id/tv_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:onClick="@{(view)->ViewHolder.onTopic(view , obj)}"
+            android:textColor="#FF616D"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+            tools:text="#某某话题" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView65" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10月1日  13：28"
+            android:textColor="#A4A4A4"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@+id/textView21" />
+
+        <TextView
+            android:id="@+id/txt_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:onClick="@{(view)->ViewHolder.onLike(view , obj)}"
+            android:text="+999"
+            android:textColor="#7F8D9C"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+            app:layout_constraintEnd_toEndOf="@+id/textView65"
+            app:layout_constraintTop_toTopOf="@+id/iv_like"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_praise"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_like"
+            app:layout_constraintTop_toBottomOf="@+id/rv_photo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txt_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="266"
+            android:textColor="#7F8D9C"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_comment"
+            app:layout_constraintEnd_toStartOf="@+id/iv_like"
+            app:layout_constraintTop_toTopOf="@+id/iv_comment"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_comment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_comment"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textView65"
+            app:layout_constraintTop_toBottomOf="@+id/rv_photo" />
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:background="@drawable/bg_plaza_guide"
+            android:gravity="top|center_horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingRight="20dp"
+            android:text="首次发帖，拿20金币"
+            android:textColor="#ff975d04"
+            android:textSize="11sp"
+            android:translationY="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tv_posted"
+            app:layout_constraintEnd_toEndOf="@id/tv_posted" />
+
+        <TextView
+            android:id="@+id/tv_tip2"
+            android:layout_width="220dp"
+            android:layout_height="53dp"
+            android:background="@drawable/bg_plaza_guide2"
+            android:gravity="top|center_horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingRight="20dp"
+            android:text="点赞，有机会在开启聊天时遇到她"
+            android:textColor="#ff975d04"
+            android:textSize="11sp"
+            android:translationX="10dp"
+            android:translationY="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/iv_like"
+            app:layout_constraintEnd_toEndOf="@id/iv_like" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

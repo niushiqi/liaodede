@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="model"
+            type="com.dyyj.idd.chatmore.model.mqtt.result.FriendRequestResult"
+            />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/item_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/content_ll"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/bg_rect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/action_txt"
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#F8CF2A"
+                android:text="领取"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

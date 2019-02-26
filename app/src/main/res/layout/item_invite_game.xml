@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/iv_gray_small">
+
+        <ImageView
+            android:id="@+id/imageView47"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_default_game_item"/>
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="成语猜猜猜"
+            android:textColor="#494949"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView47"
+            app:layout_constraintTop_toTopOf="@+id/imageView47"/>
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:text="猜成语，拿现金"
+            android:textColor="#979797"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView47"
+            app:layout_constraintStart_toEndOf="@+id/imageView47"/>
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="82dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_rect_solid_red_stroke"
+            android:gravity="center"
+            android:text="开始游戏"
+            android:textColor="#FF287E"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView47"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView47"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

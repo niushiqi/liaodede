@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/loading_lav"
+      android:layout_width="171dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="134dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:lottie_autoPlay="false"
+      app:lottie_fileName="lottie/progress_yellow.json"
+      app:lottie_loop="true"
+      tools:background="@color/accent"
+      />
+
+  <View
+      android:id="@+id/view2"
+      android:layout_width="1dp"
+      android:layout_height="1dp"
+      android:layout_marginStart="55dp"
+      app:layout_constraintBottom_toBottomOf="@+id/loading_lav"
+      app:layout_constraintStart_toStartOf="@+id/loading_lav"
+      app:layout_constraintTop_toTopOf="@+id/loading_lav"
+      />
+
+  <View
+      android:id="@+id/view3"
+      android:layout_width="1dp"
+      android:layout_height="1dp"
+      android:layout_marginEnd="55dp"
+      app:layout_constraintBottom_toBottomOf="@+id/loading_lav"
+      app:layout_constraintEnd_toEndOf="@+id/loading_lav"
+      app:layout_constraintTop_toTopOf="@+id/loading_lav"
+      />
+  <RelativeLayout
+      android:id="@+id/box_rl1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="@+id/loading_lav"
+      app:layout_constraintEnd_toStartOf="@+id/loading_lav"
+      app:layout_constraintStart_toStartOf="@+id/loading_lav"
+      app:layout_constraintTop_toTopOf="@+id/loading_lav"
+      tools:background="@color/status_bar2"
+      tools:layout_height="20dp"
+      tools:layout_width="20dp"
+      />
+
+  <RelativeLayout
+      android:id="@+id/box_rl2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="@+id/view3"
+      app:layout_constraintEnd_toEndOf="@+id/view2"
+      app:layout_constraintStart_toStartOf="@+id/view2"
+      app:layout_constraintTop_toTopOf="@+id/view3"
+      tools:background="@color/status_bar2"
+      tools:layout_height="20dp"
+      tools:layout_width="20dp"
+      />
+
+  <RelativeLayout
+      android:id="@+id/box_rl3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="@+id/view3"
+      app:layout_constraintEnd_toEndOf="@+id/view3"
+      app:layout_constraintStart_toStartOf="@+id/view3"
+      app:layout_constraintTop_toTopOf="@+id/view3"
+      tools:background="@color/status_bar2"
+      tools:layout_height="20dp"
+      tools:layout_width="20dp"
+      />
+
+  <RelativeLayout
+      android:id="@+id/box_rl4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="@+id/view3"
+      app:layout_constraintEnd_toEndOf="@+id/loading_lav"
+      app:layout_constraintStart_toEndOf="@+id/loading_lav"
+      app:layout_constraintTop_toTopOf="@+id/view3"
+      tools:background="@color/status_bar2"
+      tools:layout_height="20dp"
+      tools:layout_width="20dp"
+      />
+
+  <TextView
+      android:id="@+id/level_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="10dp"
+      android:scaleType="centerInside"
+      android:textColor="#fffd656a"
+      android:textSize="10sp"
+      app:layout_constraintBottom_toBottomOf="@+id/box_rl1"
+      app:layout_constraintEnd_toStartOf="@+id/box_rl1"
+      app:layout_constraintTop_toTopOf="@+id/box_rl1"
+      tools:text="F2"
+      />
+
+  <ImageView
+      android:id="@+id/title_iv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="5dp"
+      android:scaleType="centerInside"
+      android:src="@drawable/ic_call_status_normal2"
+      app:layout_constraintBottom_toBottomOf="@+id/level_tv"
+      app:layout_constraintEnd_toStartOf="@+id/level_tv"
+      app:layout_constraintTop_toTopOf="@+id/level_tv"
+      />
+
+  <TextView
+      android:id="@+id/schedule_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:scaleType="centerInside"
+      android:text="x1.2"
+      android:textColor="#fff04629"
+      android:textSize="13sp"
+      app:layout_constraintBottom_toBottomOf="@+id/box_rl4"
+      app:layout_constraintStart_toEndOf="@+id/box_rl4"
+      app:layout_constraintTop_toTopOf="@+id/box_rl4"
+      />
+
+</android.support.constraint.ConstraintLayout>

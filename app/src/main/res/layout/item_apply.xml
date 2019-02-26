@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.dyyj.idd.chatmore.model.network.result.ApplyFriendResult.ApplyFriend"
+            />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/avatar_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/bg_circle_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadAvatar="@{model.avatar}"
+            />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@{model.nickname}"
+            android:textColor="#ff3e3e3e"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/avatar_iv"
+            app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+            tools:text="张三" />
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="18小时前"
+            android:textColor="#ff999999"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="@+id/name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/name_tv"
+            />
+
+        <TextView
+            android:id="@+id/tv_refuse"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="80dp"
+            android:background="@drawable/rect_rounded_dddddd"
+            android:gravity="center"
+            android:text="拒绝"
+            android:textColor="#884D00"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/rect_rounded_left_right_arc"
+            android:gravity="center"
+            android:text="接受"
+            android:textColor="#884D00"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/message_tip_iv"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="2dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/space2"
+            app:layout_constraintTop_toTopOf="@+id/avatar_iv"
+            app:srcCompat="@drawable/img_message_tip"/>
+
+        <Space
+            android:id="@+id/space2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/avatar_iv"
+            app:layout_constraintStart_toEndOf="@+id/avatar_iv"
+            app:layout_constraintTop_toTopOf="@+id/avatar_iv"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

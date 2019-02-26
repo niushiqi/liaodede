@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="gold"
+            type="java.lang.Double"
+            />
+
+        <variable
+            name="stone"
+            type="java.lang.Double"
+            />
+
+        <variable
+            name="money"
+            type="java.lang.Double"
+            />
+
+        <variable
+            name="title"
+            type="java.lang.String"
+            />
+
+        <import type="android.text.TextUtils"/>
+
+        <import type="android.view.View"/>
+
+        <import type="java.lang.String"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/item_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/task_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/task_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="142dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_iv1"
+            />
+
+        <ImageView
+            android:id="@+id/task_iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal33"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_iv2"
+            />
+
+
+        <ImageView
+            android:id="@+id/bg_iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="115dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_iv1"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="@{title}"
+            android:textColor="#ffffffff"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv4"
+            app:layout_constraintStart_toStartOf="@+id/bg_iv4"
+            app:layout_constraintTop_toTopOf="@+id/bg_iv4"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/ic_txt_sign_task"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv4"
+            app:layout_constraintStart_toStartOf="@+id/bg_iv4"/>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="86dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_iv1"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="69dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_iv1"/>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_newbie_task_normal7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_iv1"/>
+
+        <ImageView
+            android:id="@+id/close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="103dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_dialog_close_normal"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv4"
+            app:layout_constraintTop_toTopOf="@+id/task_iv1"
+            />
+
+        <LinearLayout
+            android:id="@+id/content_ll"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/bg_iv4"
+            app:layout_constraintStart_toStartOf="@+id/bg_iv4"
+            app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+            <LinearLayout
+                android:id="@+id/gold_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{gold > 0? View.VISIBLE : View.GONE}"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_jinbi_normal"
+                    />
+
+                <TextView
+                    android:id="@+id/gold_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#884D00"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="50"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/stone_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{stone > 0? View.VISIBLE : View.GONE}"
+                >
+
+                <ImageView
+                    android:id="@+id/stone_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_moshi_normal"
+                    />
+
+                <TextView
+                    android:id="@+id/stone_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#884D00"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="2.3"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/money_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{money > 0? View.VISIBLE : View.GONE}"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_xianjin_normal"
+                    />
+
+                <TextView
+                    android:id="@+id/money_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#884D00"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="+2.13"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:textColor="#F64150"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/task_iv3"
+            app:layout_constraintStart_toStartOf="@+id/task_iv3"
+            app:layout_constraintTop_toTopOf="@+id/task_iv3"
+            tools:text="获得20金币+20魔石 "/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="金币可兑换现金"
+            android:textColor="#F64150"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/task_iv3"
+            app:layout_constraintStart_toStartOf="@+id/task_iv3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:text="满3天  拿双倍"
+            android:textColor="#ffe35e53"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/task_iv3"
+            app:layout_constraintEnd_toEndOf="@+id/task_iv3"
+            app:layout_constraintStart_toStartOf="@+id/task_iv3"
+            app:layout_constraintTop_toBottomOf="@+id/content_ll"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

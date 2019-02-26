@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/divider_home"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_comment_topic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/bg_blue"
+            android:gravity="center"
+            android:text="热门话题"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/tv_comment_topic_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:text="#晒晒此刻的你在哪里，做什么"
+            android:textColor="#313840"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp">
+
+        <ImageView
+            android:id="@+id/iv_comments_head"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_message_system_head" />
+
+        <TextView
+            android:id="@+id/tv_comments_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_comments_head"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/iv_comments_head"
+            android:paddingTop="6dp"
+            android:text="包小宝"
+            android:textColor="@color/color_3E3E3E"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_comments_head"
+            app:layout_constraintTop_toTopOf="@+id/iv_comments_head" />
+
+        <TextView
+            android:id="@+id/tv_comments_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/ic_square_level"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="3"
+            android:textColor="#BB3B53"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_comments_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_comments_name" />
+
+        <TextView
+            android:id="@+id/tv_comments_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="7dp"
+            android:text="女/24岁"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_comments_head"
+            app:layout_constraintLeft_toRightOf="@+id/iv_comments_head" />
+
+        <TextView
+            android:id="@+id/tv_comment_chat"
+            android:layout_width="65dp"
+            android:layout_height="28dp"
+            android:background="@drawable/ic_square_reply_bg"
+            android:gravity="center"
+            android:text="私聊TA"
+            android:textColor="#884D00"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_comments_head"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_comments_head" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_comments_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="42dp"
+        android:text="我的交友银行升级了，谢谢你每天为我生产10金币！"
+        android:textColor="#313840"
+        android:textSize="15sp" />
+
+    <com.dyyj.idd.chatmore.weiget.MyGridView
+        android:id="@+id/gv_comment_pic"
+        style="@style/mygridview"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="26dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="15dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_comments_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="12月24 18：00"
+            android:textColor="#A4A4A4"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/img_menu"
+            android:src="@drawable/ic_menu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_comment_praise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="赞过的人"
+            android:textColor="@color/color_3E3E3E"
+            android:textSize="9sp" />
+
+        <com.dyyj.idd.chatmore.weiget.MyGridView
+            android:id="@+id/gv_comment_priase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:horizontalSpacing="7dp"
+            android:numColumns="10"
+            android:verticalSpacing="7dp" />
+
+    </LinearLayout>
+</LinearLayout>

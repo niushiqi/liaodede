@@ -1,0 +1,4 @@
+<resources>
+  <item name="tab_item_left_padding" format="float" type="dimen">-8</item>
+  <item name="tab_item_bottom_padding" format="float" type="dimen">3</item>
+</resources>

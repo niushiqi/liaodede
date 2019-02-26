@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/tl_top"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:id="@+id/tv_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完成并领取奖励"
+                android:textColor="#696868"
+                android:textSize="10sp"
+                />
+
+            <com.dyyj.idd.chatmore.weiget.HorizontalProgressBar
+                android:id="@+id/horizontal_progress_bar"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_top"
+                android:layout_marginTop="10dp"
+                app:horizontalTextColor="#BE3A00"
+                app:horizontalTextSize="9sp"
+                app:horizontalWidth="14dp"
+                app:isShowText="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/horizontal_progress_bar"
+                android:layout_alignTop="@+id/horizontal_progress_bar"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/icon_threeday_task_bg"
+                />
+
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-20dp"/>
+    </LinearLayout>
+</layout>

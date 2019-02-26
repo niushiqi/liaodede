@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp" />
+
+        <ImageView
+            android:id="@+id/iv_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/bg_plaza_bottom"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_plaza"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_plaza_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_plaza"
+            app:layout_constraintEnd_toEndOf="@+id/tv_plaza"
+            app:layout_constraintStart_toStartOf="@+id/tv_plaza"
+            app:layout_constraintTop_toTopOf="@+id/tv_plaza" />
+
+        <TextView
+            android:id="@+id/tv_plaza"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_horizontal|bottom"
+            android:padding="3dp"
+            android:text="广场"
+            android:textColor="@drawable/select_plaza_text_color"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_bottom" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_horizontal|bottom"
+            android:padding="3dp"
+            android:text="返回匹配"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_bottom" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_plaza_up"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_back"
+            app:layout_constraintEnd_toEndOf="@+id/tv_back"
+            app:layout_constraintStart_toStartOf="@+id/tv_back"
+            app:layout_constraintTop_toTopOf="@+id/tv_back" />
+
+
+        <ImageView
+            android:id="@+id/iv_chat"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_plaza_chat"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_chat"
+            app:layout_constraintEnd_toEndOf="@+id/tv_chat"
+            app:layout_constraintStart_toStartOf="@+id/tv_chat"
+            app:layout_constraintTop_toTopOf="@+id/tv_chat" />
+
+        <TextView
+            android:id="@+id/tv_chat"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_horizontal|bottom"
+            android:padding="3dp"
+            android:text="聊天"
+            android:textColor="@drawable/select_plaza_text_color"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_bottom" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

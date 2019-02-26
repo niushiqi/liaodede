@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="preson_verifed">
+    <item>未认证</item>
+    <item>认证中</item>
+    <item>认证失败</item>
+    <item>已认证</item>
+  </string-array>
+  <string-array name="company_verifed">
+    <item>未加入</item>
+    <item>申请中</item>
+    <item>加入失败</item>
+    <item>已加入</item>
+  </string-array>
+  <string-array name="chatDialogItem">
+    <item>Delete</item>
+    <item>Clear</item>
+    <item>Copy</item>
+  </string-array>
+
+  <string-array name="chatMessageItem">
+    <item>Photo</item>
+    <item>Creame</item>
+    <item>Emoji</item>
+    <item>Video</item>
+    <item>voice</item>
+    <item>Location</item>
+  </string-array>
+  <string-array name="environment">
+    <item>develop</item>
+    <item>qa</item>
+    <item>stage</item>
+    <item>master</item>
+  </string-array>
+  <string-array name="more">sdf</string-array>
+  <string-array name="industry_list">
+    <item>未选择</item>
+    <item>50人以下</item>
+    <item>50~100人</item>
+    <item>100~200人</item>
+    <item>200~500人</item>
+    <item>500人以上</item>
+  </string-array>
+
+</resources>

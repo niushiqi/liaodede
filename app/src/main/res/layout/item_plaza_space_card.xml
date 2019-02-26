@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="obj"
+            type="com.dyyj.idd.chatmore.model.network.result.PlazaSpaceCardResult.Detail" />
+
+        <variable
+            name="ViewHolder"
+            type="com.dyyj.idd.chatmore.ui.adapter.PlazaSpaceCardAdapter.ViewHolder" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view)->ViewHolder.onComments(view , obj)}"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="70dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="30dp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:textColor="#ff555555"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            tools:text="昨天" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff555555"
+            android:textSize="12sp"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            tools:text="12：02" />
+
+        <TextView
+            android:id="@+id/tv_visiable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:text="好友圈可见"
+            android:textColor="#ff884d00"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+        <TextView
+            android:id="@+id/tv_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            android:gravity="left|top"
+            android:onClick="@{(view)->ViewHolder.onTopic(view , obj)}"
+            android:paddingTop="2dp"
+            android:textColor="#ffff7f40"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_visiable"
+            tools:text="#某某话题" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="26dp"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff777777"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/guideline"
+            app:layout_constraintRight_toRightOf="@+id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/tv_topic"
+            tools:text="我的交友银行升级了，谢谢
+你每天为我生产10金币！" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/tv_desc"
+            app:layout_constraintRight_toRightOf="@+id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txt_more"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="查看更多图片"
+            android:textColor="#5B94FF"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@id/tv_desc"
+            app:layout_constraintTop_toBottomOf="@id/rv_photo" />
+
+        <TextView
+            android:id="@+id/txt_like"
+            android:layout_width="46dp"
+            android:layout_height="50dp"
+            android:gravity="bottom|center_horizontal"
+            android:minWidth="25dp"
+            android:text="+0"
+            android:textColor="#7F8D9C"
+            android:textSize="12sp"
+            app:layout_constraintRight_toRightOf="@+id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/rv_photo" />
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_dynamic_like"
+            app:layout_constraintBottom_toBottomOf="@id/txt_like"
+            app:layout_constraintEnd_toEndOf="@id/txt_like"
+            app:layout_constraintStart_toStartOf="@id/txt_like"
+            app:layout_constraintTop_toTopOf="@id/txt_like" />
+
+        <TextView
+            android:id="@+id/txt_comment"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="评论"
+            android:textColor="#7F8D9C"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_like"
+            app:layout_constraintEnd_toStartOf="@id/iv_like" />
+
+        <ImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_dynamic_comment"
+            app:layout_constraintBottom_toBottomOf="@id/txt_comment"
+            app:layout_constraintEnd_toEndOf="@id/txt_comment"
+            app:layout_constraintStart_toStartOf="@id/txt_comment"
+            app:layout_constraintTop_toTopOf="@id/txt_comment" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

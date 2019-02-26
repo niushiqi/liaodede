@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_40"
+      >
+
+    <ImageView
+        android:id="@+id/bg_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_not_open_time_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/title_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_not_open_time_title"
+        app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+        app:layout_constraintStart_toStartOf="@+id/bg_iv"
+        app:layout_constraintTop_toTopOf="@+id/bg_iv"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/title_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:textSize="18sp"
+          android:textStyle="bold"
+          android:text="每晚 "
+          />
+
+      <TextView
+          android:id="@+id/time_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:textStyle="bold"
+          android:textSize="17sp"
+          tools:text="21 : 00 - 24 : 00"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:textSize="18sp"
+          android:textStyle="bold"
+          android:text=" 开启"
+          />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/close_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="22dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/btn_close_not_time_open"
+        app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+        app:layout_constraintTop_toTopOf="@+id/bg_iv"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
+        android:layout_marginEnd="13dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_not_open_time_box"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_iv"
+        app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+        />
+
+    <TextView
+        android:id="@+id/gold_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="106dp"
+        android:text="积攒金币"
+        android:textColor="#ff90581d"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/title_iv"
+        app:layout_constraintTop_toBottomOf="@+id/title_iv"
+        />
+
+    <ImageView
+        android:id="@+id/gold_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/icon_gold"
+        app:layout_constraintBottom_toBottomOf="@+id/gold_title_tv"
+        app:layout_constraintStart_toEndOf="@+id/gold_title_tv"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/gold_iv"
+        app:layout_constraintStart_toEndOf="@+id/gold_iv"
+        app:layout_constraintTop_toTopOf="@+id/gold_iv"
+        >
+      <TextView
+          android:id="@+id/coin_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          tools:text="36 "
+          android:textColor="#ff864f14"
+          android:textSize="46sp"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="枚"
+          android:textColor="#ff864f14"
+          android:textSize="23sp"
+          />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/gold_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/gold_title_tv"
+        >
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="开启宝箱"
+          android:textColor="#ff90581d"
+          android:textSize="12sp"
+          />
+      <TextView
+          android:id="@+id/box_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="14dp"
+          tools:text="1 "
+          android:textColor="#ff90581d"
+          android:textSize="25sp"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="个"
+          android:textColor="#ff90581d"
+          android:textSize="16sp"
+          />
+    </LinearLayout>
+
+  </android.support.constraint.ConstraintLayout>
+</layout>

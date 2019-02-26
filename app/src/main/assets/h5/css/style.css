@@ -1,0 +1,45 @@
+body{color:#3E3E3E;font:14px "\5FAE\8F6F\96C5\9ED1", Helvetica,STHeiti, Droidsansfallback;-webkit-user-select:text;-webkit-text-size-adjust:none;padding:0;margin:0;}
+ul{margin:0;padding:0;list-style: none;}
+h1,h2,h3,h4{margin:0;padding:0;}
+dl,dt,dd, form{margin:0;padding:0;}
+a{color:#3E3E3E;text-decoration:none;}
+a:hover{color:#884D00;font-weight:500;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #d0d0d0;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#d0d0d0;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#d0d0d0;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#d0d0d0;}
+.wrap,nav{width:100%;}
+nav{}
+.wrap{position:relative;}
+nav ul{display:flex;justify-content: space-between;margin:2rem 2rem 0 2rem;font-size:1rem;height:2rem;}
+nav ul li:hover, nav ul li.cur{color:#884D00;border-bottom:0.2rem solid #F8CF2A;padding-bottom:0.6rem;}
+.box{text-align:center;width:100%;}
+.box-inside{margin:2rem auto;width: 90%;}
+.box h1{font-size:1.2rem;}
+.box p{font-size:1rem;line-height:1.4rem;color:#999999;}
+.box ul.card{display:flex;justify-content: space-between;margin-top:1rem;}
+ul.card li{width:6rem;height:6rem;display:block;position:relative;background:url('../images/card@2x.png') no-repeat; background-size:100%;}
+ul.card li .one{color:#fff;text-align:center;width:100%;display:block;position:absolute;top:0.6rem;}
+ul.card li .two{width:0.5rem;font-size:0.65rem;word-wrap:break-word;letter-spacing:0.25rem;display:block;position:absolute;top:2.5rem;left:0.5rem;}
+ul.card li .three{color:#FF7B06;font-size:2.5rem;position:absolute;top:2.5rem;left:1.5rem;width:3rem;text-align:center;}
+ul.card li .four{color:#FF7B06;position:absolute;bottom:1rem;right:0.5rem;}
+.btn{background-color:#F8CF2A;border-radius:1.5rem;border:0;width:17rem;height:3rem;font-size:1rem;color:#884D00;margin:1.5rem 0;}
+.btn:focus{outline:0;}
+.box ul.card1{display:flex;justify-content: space-between;margin:2rem 1rem;}
+ul.card1 li{width:8.5rem;height:10rem;display:block;position:relative;}
+ul.card1 li.riches{background:url('../images/card1-1@2x.png') no-repeat;background-size:100%;}
+ul.card1 li.gold{background:url('../images/card1-2@2x.png') no-repeat;background-size:100%;}
+ul.card1 li .li-box{margin-top:4.5rem;}
+ul.card1 li .one{color:#884D00;font-size:2.5rem;display:block;width:100%;text-align:center;}
+ul.card1 li .two{color:#884D00;font-size:1rem;}
+ul.card1 li .three{color:#884D00;font-size:1rem;display:block;}
+ul.card1 li .four{color:#F64803;font-size:0.65rem;display:block;margin-top:0.2rem;}
+ul.list{margin:1rem;text-align:left;}
+ul.list li{margin-bottom:1.5rem;font-size:0.65rem;display:flex;justify-content: space-between;}
+.tips{height:5rem;background-color:#F3F3F3;padding:1rem 2rem 0;text-align:left;font-size:0.65rem;}
+.tips li{margin-bottom:0.4rem;}
+.tips li.square{list-style:square;margin-left:1rem;}
+.red{color:#F64803;}
+.orange{color:#FF7B06;}
+.mt-3{margin-top:3rem;}
+.hide{display:none;}

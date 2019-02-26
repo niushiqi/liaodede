@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="140dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@mipmap/bg_user_match_setting"
+    android:paddingTop="15dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#A86902"
+        android:padding="5dp"
+        android:id="@+id/tv_allow_match"
+        android:text="允许匹配"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#A86902"
+        android:padding="5dp"
+        android:id="@+id/tv_only_square"
+        android:text="仅允许广场匹配"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#A86902"
+        android:padding="5dp"
+        android:id="@+id/tv_onle_text"
+        android:text="仅允许文字匹配"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#A86902"
+        android:padding="5dp"
+        android:id="@+id/tv_refuse_match"
+        android:text="拒绝匹配"
+        android:textSize="14sp"/>
+
+</LinearLayout>

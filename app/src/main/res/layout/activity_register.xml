@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+    </data>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+
+            <include
+                android:id="@+id/layout_toolbar"
+                layout="@layout/layout_toolbar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:text="验证码已发送:"
+                android:textColor="#545454"
+                android:textSize="23dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_toolbar" />
+
+            <FrameLayout
+                android:id="@+id/fl_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv">
+
+                <LinearLayout
+                    android:id="@+id/ll_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/mobile_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_mobile_normal"
+                        android:drawablePadding="16dp"
+                        android:drawableStart="@drawable/ic_mobile_normal"
+                        android:hint="输入手机号"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:paddingBottom="15dp"
+                        android:paddingEnd="12dp"
+                        android:paddingStart="12dp"
+                        android:paddingTop="15dp"
+                        android:textColorHint="#828282"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="#D2D2D2" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ll_verify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/verify_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:background="@android:color/transparent"
+                            android:drawableLeft="@drawable/ic_password_nowmal"
+                            android:drawablePadding="16dp"
+                            android:drawableStart="@drawable/ic_password_nowmal"
+                            android:hint="输入验证码"
+                            android:inputType="phone"
+                            android:maxLength="11"
+                            android:paddingBottom="15dp"
+                            android:paddingEnd="12dp"
+                            android:paddingStart="12dp"
+                            android:paddingTop="15dp"
+                            android:textColorHint="#828282"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:background="#D2D2D2" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/verify_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/rect_rounded_left_right_arc"
+                        android:gravity="center"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="8dp"
+                        android:text="获取验证码"
+                        android:textColor="#884d00"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/ll_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/setpass_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:drawableLeft="@drawable/icon_pass"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/icon_pass"
+                            android:ems="10"
+                            android:hint="设置密码"
+                            android:maxLines="1"
+                            android:paddingBottom="15dp"
+                            android:paddingEnd="12dp"
+                            android:paddingStart="12dp"
+                            android:paddingTop="15dp"
+                            android:textColorHint="#BDBBC2"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D2D2D2" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/see_iv"
+                        android:layout_width="47dp"
+                        android:layout_height="33dp"
+                        android:layout_marginRight="12dp"
+                        android:padding="10dp"
+                        android:src="@drawable/icon_see_no"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/ll_password"
+                        app:layout_constraintEnd_toEndOf="@+id/ll_password"
+                        app:layout_constraintTop_toTopOf="@+id/ll_password" />
+                </android.support.constraint.ConstraintLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txt_forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:padding="10dp"
+                android:text="忘记密码？"
+                android:textColor="#545454"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fl_input"
+                android:layout_marginLeft="8dp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/txt_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
+                android:drawableLeft="@drawable/ic_hongdian"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:maxWidth="150dp"
+                android:text="请输入正确的密码"
+                android:textColor="#FA4C48"
+                android:textSize="9sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.894"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_input"
+                android:layout_marginRight="8dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/login_btn"
+                android:layout_width="245dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/rect_rounded_left_right_arc"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="#884D00"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fl_input" />
+
+            <LinearLayout
+                android:id="@+id/ll_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn"
+                app:layout_constraintVertical_bias="0.944">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我已经同意 "
+                    android:textColor="#BDBBC2"
+                    android:textSize="9sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="聊得得用户协议 "
+                    android:textColor="#5B94FF"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+</layout>

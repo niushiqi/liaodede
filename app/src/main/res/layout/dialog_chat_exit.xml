@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="190dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_convention_normal">
+
+    <ImageView
+        android:id="@+id/close_iv"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_dialog_close_normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="再聊一会儿吧···"
+        android:textColor="#fff30950"
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="3分钟的缘分，不加好友就错过了"
+        android:textColor="#ff4d4d4d"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="78dp"/>
+
+    <Button
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rect_rounded_left_right_arc"
+        android:textColor="#884D00"
+        android:textSize="12sp"
+        android:id="@+id/btn_stay"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="125dp"
+        android:layout_marginRight="32dp"
+        android:text="再聊会儿"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:background="#0000"
+        android:textColor="#4F4F4F"
+        android:textSize="12sp"
+        android:id="@+id/btn_exit"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="125dp"
+        android:text="坚决退出"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

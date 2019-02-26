@@ -1,0 +1,254 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+  <style name="AppThemeNotitle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="colorAccent">@color/accent</item>
+    <item name="android:windowNoTitle">true</item><!--不显示应用程序标题栏 -->
+  </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="toolbar_theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">#9a000000</item>
+    </style>
+
+    <style name="TransparentTheme" parent="AppTheme">
+        <item name="android:activityOpenEnterAnimation">@anim/bga_sbl_activity_backward_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/bga_sbl_activity_backward_exit</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="windowActionBar">false</item> <!-- 加这行 -->
+        <item name="windowNoTitle">true</item> <!-- 再加这行 -->
+    </style>
+
+    <style name="ChatTransparentTheme" parent="AppTheme">
+        <!--将Activity的Theme设置成透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="windowActionBar">false</item> <!-- 加这行 -->
+        <item name="windowNoTitle">true</item> <!-- 再加这行 -->
+    </style>
+
+    <style name="dialogstyle" parent="AppTheme">
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <!--设置无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--设置动画，在这里使用让它继承系统的Animation.Dialog-->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Toast</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="dialogstyle2" parent="AppTheme">
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@color/black_80</item>
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--设置动画，在这里使用让它继承系统的Animation.Dialog-->
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- Activity进出入动画 -->
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_slide_enter_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_slide_exit_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_slide_enter_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_slide_exit_right</item>
+    </style>
+    <style name="smallTextPadding">
+        <item name="android:paddingStart">  10dp</item>
+        <item name="android:paddingEnd">    10dp</item>
+        <item name="android:paddingLeft">   10dp</item>
+        <item name="android:paddingRight">  10dp</item>
+        <item name="android:paddingTop">     2dp</item>
+        <item name="android:paddingBottom">  2dp</item>
+    </style>
+
+    <style name="smallBetweenNormalTextPadding">
+        <item name="android:paddingStart">  15dp</item>
+        <item name="android:paddingEnd">    15dp</item>
+        <item name="android:paddingLeft">   15dp</item>
+        <item name="android:paddingRight">  15dp</item>
+        <item name="android:paddingTop">     5dp</item>
+        <item name="android:paddingBottom">  5dp</item>
+    </style>
+
+
+
+    <style name="normalTextPadding">
+        <item name="android:paddingStart">  20dp</item>
+        <item name="android:paddingEnd">    20dp</item>
+        <item name="android:paddingLeft">   20dp</item>
+        <item name="android:paddingRight">  20dp</item>
+        <item name="android:paddingTop">     10dp</item>
+        <item name="android:paddingBottom">  10dp</item>
+    </style>
+
+    <style name="bigTextPadding">
+        <item name="android:paddingStart">  30dp</item>
+        <item name="android:paddingEnd">    30dp</item>
+        <item name="android:paddingLeft">   30dp</item>
+        <item name="android:paddingRight">  30dp</item>
+        <item name="android:paddingTop">     30dp</item>
+        <item name="android:paddingBottom">  30dp</item>
+    </style>
+
+    <style name="bigRectTextPadding">
+        <item name="android:paddingStart">  60dp</item>
+        <item name="android:paddingEnd">    60dp</item>
+        <item name="android:paddingLeft">   60dp</item>
+        <item name="android:paddingRight">  60dp</item>
+        <item name="android:paddingTop">     15dp</item>
+        <item name="android:paddingBottom">  15dp</item>
+    </style>
+
+
+
+    <style name="invited_new_txt_bg">
+        <item name="android:paddingStart">  20dp</item>
+        <item name="android:paddingEnd">    13dp</item>
+        <item name="android:paddingLeft">   20dp</item>
+        <item name="android:paddingRight">  13dp</item>
+        <item name="android:paddingTop">     10dp</item>
+        <item name="android:paddingBottom">  10dp</item>
+    </style>
+
+
+
+
+
+  <declare-styleable name="BubbleView">
+    <attr format="dimension" name="arrowWidth" />
+    <attr format="dimension" name="angle" />
+    <attr format="dimension" name="arrowHeight" />
+    <attr format="dimension" name="arrowPosition" />
+    <attr format="color" name="bubbleColor" />
+    <attr format="boolean" name="arrowCenter" />
+    <attr format="enum" name="arrowLocation">
+            <enum name="left" value="0x00" />
+            <enum name="right" value="0x01" />
+            <enum name="top" value="0x02" />
+            <enum name="bottom" value="0x03" />
+        </attr>
+    </declare-styleable>
+
+
+    <style name="translucent" parent="AppTheme">
+        <item name="windowActionBar">false</item> <!-- 加这行 -->
+        <item name="windowNoTitle">true</item> <!-- 再加这行 -->
+        <item name="android:windowBackground">@color/translucent_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="DialogChatHowEnterExitAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/trans_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/trans_dialog_out</item>
+    </style><!--zwj-->
+
+    <style name="PopSendGiftEnterExitAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/trans_pop_left_in</item>
+        <item name="android:windowExitAnimation">@anim/trans_pop_left_out</item>
+    </style><!--zwj-->
+
+    <style name="pop_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+
+    <style name="pop_anim_style_from_bottom_to_top">
+        <item name="android:windowEnterAnimation">@anim/pop_out</item>
+        <item name="android:windowExitAnimation">@anim/pop_enter</item>
+    </style>
+
+    <style name="pop_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_gone</item>
+    </style>
+
+    <declare-styleable name="CustomCircleProgressBar">
+        <attr name="outside_color" format="color" />
+        <attr name="outside_radius" format="dimension" />
+        <attr name="inside_color" format="color" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_width" format="dimension" />
+        <attr name="max_progress" format="integer" />
+        <attr name="progress" format="float" />
+        <attr name="direction">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WaterRippleView">
+        <attr name="rippleSpacing" format="dimension|reference" />
+        <attr name="rippleCount" format="integer|reference" />
+        <!--<attr name="rippleColor" format="color|reference"/>-->
+        <attr name="rippleCenterIcon" format="reference" />
+        <attr name="rippleAutoRunning" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="HorizontalProgressBar">
+        <attr name="horizontalColor" format="color" />
+        <attr name="horizontalProgressColor" format="color" />
+        <attr name="horizontalWidth" format="dimension"></attr>
+        <attr name="horizontalTextColor" format="color" />
+        <attr name="horizontalTextSize" format="dimension" />
+        <attr name="horizontalMax" format="integer"></attr>
+        <attr name="isShowText" format="boolean"></attr>
+        <attr name="radius" format="dimension"></attr>
+        <attr name="isRoundRect" format="boolean"></attr>
+    </declare-styleable>
+
+    <!-- Activity进出入动画 -->
+    <style name="mygridview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:horizontalSpacing">8dp</item>
+        <item name="android:verticalSpacing">8dp</item>
+        <item name="android:numColumns">3</item>
+        <item name="android:focusable">false</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:listSelector">@color/translucent_background</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="MyDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

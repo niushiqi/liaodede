@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    >
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv1"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv1"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv1"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv1"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv1"
+                            />
+
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv2"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv2"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv2"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv2"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv2"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv3"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv3"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv3"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv3"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv3"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv4"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv4"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv4"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv4"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv4"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    >
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv5"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv5"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv5"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv5"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv5"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv6"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv6"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv6"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv6"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv6"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv7"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv7"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv7"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv7"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv7"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv8"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv8"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv8"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv8"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv8"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    >
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv9"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv9"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv9"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="@+id/icon_iv9"
+                            app:layout_constraintTop_toTopOf="@+id/icon_iv9"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/item_cl10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icon_iv10"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/select_iv10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bg_game_tools_item_selected"
+                            android:visibility="visible"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/ll_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gold_flag"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_iv10"
+                            app:layout_constraintStart_toStartOf="@+id/icon_iv10"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/icon_gold_flag_normal"
+                                />
+
+                            <TextView
+                                android:id="@+id/gold_tv10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginStart="5dp"
+                                android:includeFontPadding="false"
+                                android:text="15.3"
+                                android:textColor="#ffbb682f"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flag_tv10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:background="@color/white"
+                            android:includeFontPadding="false"
+                            android:text="30"
+                            android:textColor="#ffa89180"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="165dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/rect_rounded_left_right_arc9"
+                            android:orientation="horizontal"
+                            >
+
+                            <ImageView
+                                android:id="@+id/icon_iv11"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="15dp"
+                                android:scaleType="centerInside"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="17dp"
+                                android:orientation="vertical"
+                                >
+
+                                <TextView
+                                    android:id="@+id/title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="数量已满30"
+                                    android:textColor="#ffbb682f"
+                                    android:textSize="12sp"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/content_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="可兑换90金币"
+                                    android:textColor="#ffbb682f"
+                                    android:textSize="10sp"
+                                    />
+
+                                <android.support.v7.widget.AppCompatButton
+                                    android:id="@+id/exchange_btn"
+                                    android:layout_width="65dp"
+                                    android:layout_height="25dp"
+                                    android:layout_marginTop="7dp"
+                                    android:background="@drawable/rect_rounded_left_right_arc13"
+                                    android:text="点击兑换"
+                                    android:textColor="#fffadc46"
+                                    android:textSize="12sp"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="魔石有效期30天"
+                        android:textColor="#ff868686"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/flag_tv10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/flag_tv10"
+                        app:layout_constraintVertical_bias="1.0"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="道具数量集满30可兑换金币"
+                        android:textColor="#ff868686"
+                        android:textSize="10sp"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

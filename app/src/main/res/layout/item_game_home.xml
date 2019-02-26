@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_game_item_2">
+
+        <RelativeLayout
+            android:id="@+id/ll_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txt_hide"
+                android:layout_width="wrap_content"
+                android:text="骰子比大小"
+                android:textSize="15sp"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/txt_hide"
+                android:layout_alignLeft="@id/txt_hide"
+                android:text="骰子比大小"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/txt_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/txt_hide"
+                android:layout_alignRight="@id/txt_hide"
+                android:layout_below="@id/txt_title1"
+                android:layout_marginTop="30dp"
+                android:lineSpacingExtra="3dp"
+                android:text="7秒内点击次数多的人获胜。"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_below="@id/txt_title1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_game_close"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_game_icon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/icon_game_tag_2"
+            app:layout_constraintBottom_toTopOf="@id/ll_center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="开始"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_center"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black"
+      >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="230dp"
+        android:layout_height="228dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+      <ImageView
+          android:id="@+id/imageView50"
+          android:layout_width="2dp"
+          android:layout_height="12dp"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="22dp"
+          android:src="@drawable/ic_dialog_tip_pressed"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/close_iv"
+          android:layout_width="wrap_content"
+          android:layout_height="18dp"
+          android:layout_marginEnd="176dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="20dp"
+          android:text="提示"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/imageView50"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/title_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginTop="60dp"
+          android:text="提现申请成功"
+          android:textColor="#ff3e3e3e"
+          android:textSize="14sp"
+          />
+
+      <TextView
+          android:id="@+id/desc_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/title_tv"
+          android:layout_marginTop="8dp"
+          android:text="请耐心等待1-3个工作日"
+          android:textColor="#ff999999"
+          android:textSize="12sp"
+          />
+      <TextView
+          android:id="@+id/desc_tv2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/desc_tv"
+          android:text="现金即可到账"
+          android:textColor="#ff999999"
+          android:textSize="12sp"
+          />
+
+      <TextView
+          android:id="@+id/tv_find_record"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="请到提现记录查询详情"
+          app:layout_constraintBottom_toTopOf="@+id/btn_ll"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:layout_marginBottom="10dp"
+          android:textColor="#ff5b94ff"
+          android:textSize="11sp"
+          />
+
+      <LinearLayout
+          android:id="@+id/btn_ll"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginBottom="20dp"
+          android:orientation="horizontal"
+          >
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ok_btn"
+            android:layout_width="85dp"
+            android:layout_height="39dp"
+            android:text="知道了"
+            android:textColor="#ff884d00"
+            android:textSize="15sp"
+            android:background="@drawable/rect_rounded_left_right_arc"
+            />
+      </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+  </android.support.constraint.ConstraintLayout>
+</layout>

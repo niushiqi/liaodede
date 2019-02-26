@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.dyyj.idd.chatmore.model.network.result.CoinSummaryResult.Data"
+            />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/bg_iv"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/bg_gold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/icon_iv"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_cash_big"
+                app:layout_constraintBottom_toBottomOf="@+id/bg_iv"
+                app:layout_constraintStart_toStartOf="@+id/bg_iv"
+                app:layout_constraintTop_toTopOf="@+id/bg_iv"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_iv"
+                app:layout_constraintStart_toEndOf="@+id/icon_iv"
+                app:layout_constraintTop_toTopOf="@+id/icon_iv"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前金币"
+                    android:textColor="#ff573579"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:id="@+id/moshi_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#66410B"
+                    android:textSize="36sp"
+                    />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_convert"
+                android:layout_width="100dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rect_rounded_left_right_arc5"
+                android:text="兑换"
+                android:textColor="#8B5107"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/bg_iv"
+                app:layout_constraintEnd_toEndOf="@+id/bg_iv"
+                app:layout_constraintTop_toTopOf="@+id/bg_iv"
+                />
+
+            <ImageView
+                android:id="@+id/iv_bg2"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_bg_zhuanqian"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_iv"/>
+
+            <ImageView
+                android:id="@+id/iv_zhuanqian"
+                android:layout_width="140dp"
+                android:layout_height="64dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="165dp"
+                android:src="@drawable/ic_btn_zhuanqian"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_bg2"/>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>

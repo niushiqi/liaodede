@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f2f2f2">
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/iv_tip"
+            android:background="@drawable/icon_chat_tip"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启语音，立即解锁好玩小游
+戏！还能无限畅聊！"
+            android:textColor="#777777"
+            android:textSize="13sp"
+            android:id="@+id/tv_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="66dp"
+            android:layout_marginRight="126dp"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_chat_addfriend"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="添加好友"
+            android:textSize="12sp"
+            android:id="@+id/btn_friend_voice"
+            android:layout_marginRight="41dp"
+            android:textColor="@color/white"/>
+        
+    </RelativeLayout>
+</layout>
+
+
+
+

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black"
+      >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="230dp"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+      <ImageView
+          android:id="@+id/imageView50"
+          android:layout_width="2dp"
+          android:layout_height="12dp"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="22dp"
+          android:src="@drawable/ic_dialog_tip_pressed"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+      <ImageView
+          android:id="@+id/close_iv"
+          android:layout_width="18dp"
+          android:layout_height="18dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginTop="22dp"
+          android:layout_marginEnd="15dp"
+          android:src="@drawable/btn_dialog_close_normal"
+          />
+      <TextView
+          android:id="@+id/close_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="18dp"
+          android:layout_marginEnd="176dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="20dp"
+          android:text="提示"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/imageView50"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+          android:id="@+id/title_tv"
+          android:layout_width="49dp"
+          android:layout_height="53dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginTop="60dp"
+          android:src="@drawable/img_moshi"
+          android:textColor="#ff3e3e3e"
+          android:textSize="14sp"
+          />
+      <TextView
+          android:id="@+id/tv_moshi_value"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/title_tv"
+          android:layout_marginTop="8dp"
+          android:text="+100"
+          android:textStyle="bold"
+          android:textColor="#864EB4"
+          android:textSize="21sp"
+          />
+
+
+      <TextView
+          android:id="@+id/tv_pay_status"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_moshi_value"
+          android:text="购买成功"
+          android:textColor="#3E3E3E"
+          android:textSize="18sp"
+          />
+
+      <LinearLayout
+          android:id="@+id/btn_ll"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginBottom="20dp"
+          android:orientation="horizontal"
+          >
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ok_btn"
+            android:layout_width="85dp"
+            android:layout_height="39dp"
+            android:text="我知道了"
+            android:textColor="#ff884d00"
+            android:textSize="15sp"
+            android:background="@drawable/rect_rounded_left_right_arc"
+            />
+      </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+  </android.support.constraint.ConstraintLayout>
+</layout>

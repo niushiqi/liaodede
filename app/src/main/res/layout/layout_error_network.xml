@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F5F9"
+    android:orientation="vertical"
+    >
+
+  <!--网络异常..-->
+  <LinearLayout
+      android:id="@+id/ll_network_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_gravity="center"
+      android:gravity="center_horizontal"
+      android:orientation="vertical"
+      android:visibility="visible"
+      >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+      <ImageView
+          android:id="@+id/error_iv1"
+          android:layout_width="191dp"
+          android:layout_height="164dp"
+          android:layout_centerInParent="true"
+          android:src="@drawable/ic_error_network1_normal"
+          />
+      <ImageView
+          android:layout_width="50dp"
+          android:layout_height="164dp"
+          android:layout_toEndOf="@+id/error_iv1"
+          android:src="@drawable/ic_error_network2_normal"
+          />
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:visibility="visible"
+        android:text="@string/error_network"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#999999"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="@string/error_network_content"
+        />
+
+    <Button
+        android:id="@+id/error_network_refersh_btn"
+        android:layout_width="117dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_side_blue"
+        android:textColor="#ff2196f3"
+        android:textSize="16sp"
+        android:text="@string/error_network_btn"
+        />
+  </LinearLayout>
+</RelativeLayout>

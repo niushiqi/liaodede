@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6000000">
+
+        <RelativeLayout
+            android:id="@+id/base_root"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_huahua_bg">
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="邀新规则"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="1、朋友点开了你分享的地址，输入手机号，下载了聊得得。\n\n2、注册聊得得账号，你将立得0.8元！\n\n3、在聊得得开启聊天，聊天过程中加好友成功，你将得到1.2元！\n\n注意：加好友的1.2元会分两次获得哦~~\n注册三天内加好友成功，得到0.6元。4~7天加好友成功得到剩下的0.6元。"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

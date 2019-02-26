@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <data>
+
+    <variable
+        name="gold"
+        type="java.lang.Double"
+        />
+
+    <variable
+        name="money"
+        type="java.lang.Double"
+        />
+
+    <variable
+        name="stone"
+        type="java.lang.Double"
+        />
+
+    <import type="android.view.View" />
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+      android:id="@+id/item_cl"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+    <ImageView
+        android:id="@+id/hang_up_iv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_hang_up_normal1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/hang_up_iv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_hang_up_normal2"
+        app:layout_constraintEnd_toEndOf="@+id/hang_up_iv1"
+        app:layout_constraintStart_toStartOf="@+id/hang_up_iv1"
+        app:layout_constraintTop_toTopOf="@+id/hang_up_iv1"
+        />
+
+    <ImageView
+        android:id="@+id/hang_up_iv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_hang_up_normal3"
+        app:layout_constraintEnd_toEndOf="@+id/hang_up_iv2"
+        app:layout_constraintStart_toStartOf="@+id/hang_up_iv2"
+        app:layout_constraintTop_toBottomOf="@+id/hang_up_iv2"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_hang_up_normal4"
+        app:layout_constraintBottom_toBottomOf="@+id/hang_up_iv2"
+        app:layout_constraintEnd_toEndOf="@+id/hang_up_iv2"
+        app:layout_constraintStart_toStartOf="@+id/hang_up_iv2"
+        app:layout_constraintTop_toTopOf="@+id/hang_up_iv2"
+        />
+
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/btn_dialog_close_normal"
+        app:layout_constraintEnd_toEndOf="@+id/hang_up_iv2"
+        app:layout_constraintTop_toTopOf="@+id/hang_up_iv2"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="184dp"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hang_up_iv3"
+        app:layout_constraintEnd_toEndOf="@+id/hang_up_iv3"
+        app:layout_constraintStart_toStartOf="@+id/hang_up_iv3"
+        app:layout_constraintTop_toTopOf="@+id/hang_up_iv3"
+        >
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="horizontal"
+          android:visibility="@{money > 0? View.VISIBLE : View.GONE}"
+          >
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="38dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_hang_up_money_normal"
+            />
+
+        <TextView
+            android:id="@+id/money_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="#884D00"
+            android:textSize="17sp"
+            tools:text="+3.12"
+            />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="horizontal"
+          android:visibility="@{gold > 0? View.VISIBLE : View.GONE}"
+          >
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="38dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_hang_up_gold_normal"
+            />
+
+        <TextView
+            android:id="@+id/gold_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="#884D00"
+            android:textSize="17sp"
+            tools:text="+200"
+            />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="horizontal"
+          android:visibility="@{stone > 0? View.VISIBLE : View.GONE}"
+          >
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="38dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_hang_up_stone_normal"
+            />
+
+        <TextView
+            android:id="@+id/stone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="#884D00"
+            android:textSize="17sp"
+            tools:text="+30"
+            />
+      </LinearLayout>
+    </LinearLayout>
+  </android.support.constraint.ConstraintLayout>
+</layout>

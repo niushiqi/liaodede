@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.dyyj.idd.chatmore.model.network.result.MainResult.Data" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#120d30">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_share_red_packet_close"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <WebView
+            android:id="@+id/wv_loading"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="51dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/accent" />
+
+        <TextView
+            android:id="@+id/tv_collect_status2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="66dp"
+            android:text="真可惜，没找到人"
+            android:textColor="#FFEC1C"
+            android:visibility="gone"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_match_fail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_match_fail"
+            android:layout_width="120dp"
+            android:layout_height="175dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_match_faild"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_collect_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_collect_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="正在为你匹配人，请耐心等待···"
+            android:textColor="#FFEC1C"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wv_loading" />
+
+        <master.flame.danmaku.ui.widget.DanmakuView
+            android:id="@+id/sv_danmaku"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="100dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/loading_lav" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_connect_fail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="63dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_tip"
+                android:layout_width="166dp"
+                android:layout_height="53dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:visibility="gone"
+                android:background="@drawable/bg_tip_text_chat"
+                app:layout_constraintBottom_toTopOf="@+id/imageView54"
+                app:layout_constraintEnd_toEndOf="@+id/cl_character1"
+                app:layout_constraintHorizontal_bias="0.367"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/tv_timeout_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="14dp"
+                    android:text="试试文字匹配，3分钟随缘"
+                    android:textColor="#FEFEFE"
+                    android:textSize="11sp" />
+
+            </RelativeLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_character1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="172dp"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/btn_start_text_chat"
+                    android:layout_width="191dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="47dp"
+                    android:background="@drawable/rect_rounded_left_right_arc"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:text="试试随缘匹配"
+                    android:textColor="#B05229"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/tv_text_cant_match"
+                    android:layout_width="191dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="47dp"
+                    android:background="@drawable/ic_suiyuanpipei"
+                    android:paddingLeft="20dp"
+                    android:visibility="gone" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <Button
+                android:id="@+id/btn_continue_voice"
+                android:layout_width="191dp"
+                android:layout_height="51dp"
+                android:layout_below="@id/cl_character1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/bg_start_chat"
+                android:paddingLeft="20dp"
+                android:text="继续开启聊天"
+                android:textColor="#FFF262"
+                android:textSize="17dp"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_character1" />
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/icon_start_voice_chat"
+                app:layout_constraintBottom_toBottomOf="@id/btn_continue_voice"
+                app:layout_constraintLeft_toLeftOf="@id/btn_continue_voice"
+                app:layout_constraintTop_toTopOf="@id/btn_continue_voice" />
+
+            <ImageView
+                android:id="@+id/imageView54"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="148dp"
+                android:src="@drawable/icon_start_text_chat2"
+                app:layout_constraintBottom_toBottomOf="@id/cl_character1"
+                app:layout_constraintEnd_toEndOf="@+id/cl_character1"
+                app:layout_constraintLeft_toLeftOf="@id/cl_character1"
+                app:layout_constraintTop_toTopOf="@id/cl_character1"
+                app:layout_constraintVertical_bias="0.52" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.dyyj.idd.chatmore.weiget.banner.BannerLayout
+            android:id="@+id/banner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_marginBottom="70dp"
+            app:autoPlaying="true"
+            app:centerScale="1.0"
+            app:itemSpace="30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:moveSpeed="2.5"
+            app:showIndicator="false" />
+
+        <ImageView
+            android:id="@+id/moshi_iv"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginBottom="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6000000">
+
+        <RelativeLayout
+            android:id="@+id/rl_chat_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_chat_tip_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_chat_tip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="39dp"
+                android:src="@drawable/ic_chat_tip_title"/>
+
+            <TextView
+                android:id="@+id/txt_chat_tip_1"
+                android:layout_width="214dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_chat_tip_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
+                android:text="遇到言语骚扰、诈骗营销等冒犯行为。"
+                android:textColor="#303030"
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/txt_chat_tip_2"
+                android:layout_width="214dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_chat_tip_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="27dp"
+                android:text="请立即举报，平台将认真核实为您屏蔽违规用户！"
+                android:textColor="#303030"
+                android:textSize="19sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_chat_tip_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="42dp"
+                android:layout_marginTop="33dp"
+                android:src="@drawable/ic_chat_tip_des"/>
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/rl_top"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/bg_chat_tip">-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_top"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:src="@drawable/ic_chat_tip_shouye"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/iv_top"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginBottom="23dp"-->
+            <!--android:layout_marginTop="14dp"-->
+            <!--android:text="聊得得充分保护您的社交体验"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="16sp"/>-->
+            <!--</RelativeLayout>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/txt_top"-->
+            <!--android:layout_width="207dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/rl_top"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="39dp"-->
+            <!--android:text="遇到言语骚扰、诈骗营销等冒犯行为。"-->
+            <!--android:textColor="#080809"-->
+            <!--android:textSize="18sp"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="207dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/txt_top"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginBottom="50dp"-->
+            <!--android:layout_marginTop="32dp"-->
+            <!--android:text="请立即举报，平台将认真核实为您屏蔽违规用户！"-->
+            <!--android:textColor="#029A68"-->
+            <!--android:textSize="18sp"/>-->
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:text="知道了"
+            android:textColor="#FDFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_chat_tip"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:background="@color/white"
+      >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_received_gifts"
+        android:layout_width="match_parent"
+        android:paddingStart="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.71"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        android:background="@drawable/shape_bg_layout_dark_yellow"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingEnd="70dp"
+        android:paddingStart="70dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+      <TextView
+          android:id="@+id/tv_value_how_much"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="可兑换90金币"
+          android:textColor="#BB682F"
+          android:textSize="17dp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/tv_desc"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="满5个，就可以兑换啦~"
+          android:textColor="#BB682F"
+          android:textSize="10dp" />
+
+      <TextView
+          android:id="@+id/click_and_conversion"
+          style="@style/normalTextPadding"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:background="@drawable/shape_bg_btn_brown"
+          android:text="点击兑换"
+          android:textColor="#FADC46"
+          android:textSize="15dp"
+          android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.04"
+        android:layout_gravity="center_horizontal"
+        android:text="礼物有效期180天"
+        android:textColor="#838383"
+        android:textSize="9dp" />
+
+  </LinearLayout>
+</layout>

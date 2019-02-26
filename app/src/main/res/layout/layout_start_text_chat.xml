@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="196dp"
+    android:layout_height="56dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_start_chat">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="17dp"
+        android:background="@drawable/icon_start_text_chat"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="文字匹配"
+        android:textColor="#fffff262"
+        android:textSize="16sp"
+        android:id="@+id/tv_text_title"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="10dp"/>
+
+    <com.dyyj.idd.chatmore.weiget.NoticeView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3分钟随缘"
+        android:layout_marginLeft="54dp"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/mv_text_sub"
+        app:nvInterval="2000"
+        app:nvTextColor="#fff262"
+        app:nvTextGravity="left"
+        app:nvTextSize="10sp"/>
+    
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="196dp"
+                android:layout_height="56dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@drawable/bg_start_chat">
+
+    <ImageView
+        android:layout_width="27dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="17dp"
+        android:background="@drawable/icon_start_voice_chat"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="语音匹配"
+        android:textColor="#fffff262"
+        android:textSize="16sp"
+        android:id="@+id/tv_voice_title"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="10dp"/>
+
+    <com.dyyj.idd.chatmore.weiget.NoticeView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="连麦聊天玩游戏"
+        app:nvTextGravity="left"
+        app:nvTextSize="10sp"
+        app:nvTextColor="#fff262"
+        app:nvInterval="2000"
+        android:id="@+id/mv_voice_sub"
+        android:layout_marginLeft="54dp"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true" />
+
+    <RelativeLayout
+        android:layout_width="56dp"
+        android:layout_height="36dp"
+        android:id="@+id/rl_user_coin"
+        android:visibility="gone"
+        android:background="@drawable/bg_start_voice_chat_gold"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="匹配可得"
+            android:textColor="#ffac5b25"
+            android:textSize="7sp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="7dp"/>
+        
+        <ImageView
+            android:layout_width="9dp"
+            android:layout_height="11dp"
+            android:background="@drawable/icon_start_voice_chat_gold"
+            android:layout_marginLeft="11dp"
+            android:layout_marginBottom="7dp"
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="800枚"
+            android:textColor="#ffac5b25"
+            android:id="@+id/tv_user_coin"
+            android:textSize="8sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="21dp"
+            android:layout_marginBottom="8dp"/>
+
+    </RelativeLayout>
+    
+</RelativeLayout>

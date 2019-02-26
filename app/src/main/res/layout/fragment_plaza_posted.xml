@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar_posted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="18dp"
+            android:background="@android:color/transparent"
+            android:gravity="left|top"
+            android:hint="每次发动态，都可拿2金币！这条动态会出现在广场哦，让更多人认识你```"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="5dp"
+            android:textColor="#333333"
+            android:textColorHint="#A1A1A1"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toolbar" />
+
+        <TextView
+            android:id="@+id/tv_select"
+            android:layout_width="70dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/shape_bg_darkpink_posted"
+            android:gravity="center"
+            android:text="#选择话题"
+            android:textColor="#FF715F"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_input" />
+
+        <TextView
+            android:id="@+id/tv_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="#"
+            android:textColor="#FF616D"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_select"
+            app:layout_constraintStart_toEndOf="@id/tv_select"
+            app:layout_constraintTop_toTopOf="@id/tv_select" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFBAB1"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="选择相关话题标签，让更多人看到你！"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

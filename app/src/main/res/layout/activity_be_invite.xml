@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_horizontal"
+      android:background="@color/white"
+      android:orientation="vertical"
+      >
+    <include
+        android:id="@+id/layout_toolbar"
+        layout="@layout/layout_toolbar1" />
+
+    <LinearLayout
+        android:id="@+id/title_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+      <View
+          android:layout_width="70dp"
+          android:layout_height="1px"
+          android:background="#ffbebdbd"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="10dp"
+          android:layout_marginStart="10dp"
+          android:text="邀请码"
+          android:textColor="#ff999999"
+          android:textSize="12sp"
+          />
+      <View
+          android:layout_width="70dp"
+          android:layout_height="1px"
+          android:background="#ffbebdbd"
+          />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/input_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        >
+
+      <LinearLayout
+          android:layout_width="180dp"
+          android:layout_height="45dp"
+          android:background="@drawable/rect_rounded_left_right_arc2"
+          android:gravity="center"
+          android:orientation="horizontal"
+          >
+        <EditText
+            android:id="@+id/code_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:hint="输入邀请码"
+            android:inputType="textEmailAddress"
+            android:maxLength="9"
+            android:maxLines="1"
+            android:textColorHint="#ffd3d3d3"
+            android:textSize="15sp"
+            />
+      </LinearLayout>
+
+      <android.support.v7.widget.AppCompatButton
+          android:id="@+id/get_award_btn"
+          android:layout_width="100dp"
+          android:layout_height="45dp"
+          android:layout_marginStart="10dp"
+          android:background="@drawable/rect_rounded_left_right_arc"
+          android:text="确定"
+          android:textColor="#ff884d00"
+          android:textSize="15sp"
+          />
+
+    </LinearLayout>
+  </LinearLayout>
+</layout>

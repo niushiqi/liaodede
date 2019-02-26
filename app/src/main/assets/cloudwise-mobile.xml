@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<agent-app>
+	<!-- "True" is only for test use, strongly recommend you to set "False" for production environment -->
+	<debug>true</debug>
+	<injectJs>https://seagull.toushibao.com/rum/Event4Android.js</injectJs>
+	<appInfo>
+		<!-- Data storage domain -->
+	    <datadomain>http://seagull-data.toushibao.com</datadomain>
+		
+	    <!-- User information storage domain -->
+	    <userdomain>http://seagull.toushibao.com</userdomain>
+		
+		<!-- The AppKey applied On the internet -->
+		<appKey>wS0n2SF8WRA6pp871oldJ8lHSEFV**pcUsZM8zDzdYl5TZ4qNxU1dMfsxEz5FDjWTbP0OdxCfApk!!</appKey>
+	</appInfo>
+</agent-app>
