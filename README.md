@@ -89,6 +89,17 @@ app/
     ├── hyphenatechat_3.4.2.jar         # 环信SDK
     ├── GetuiSDK2.12.5.0.jar            # 个推SDK
     └── alipaySdk-20180601.jar          # 支付宝SDK
+
+linphone-android/                       # 音视频通话模块
+├── src/                               # 源代码
+│   └── main/
+│       ├── java/org/linphone/         # Linphone核心代码
+│       ├── res/                       # 资源文件
+│       └── AndroidManifest.xml        # 模块配置文件
+├── libs/                              # 本地依赖库
+├── build.gradle                       # 构建配置文件
+├── proguard-rules.pro                 # 代码混淆规则
+└── README.md                          # 模块说明文档
 ```
 
 ## 主要功能页面
